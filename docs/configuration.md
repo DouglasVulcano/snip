@@ -17,8 +17,10 @@ show up as rows in Claude Code's `/config` menu, or you can set them in
 }
 ```
 
-The key under `pluginConfigs` is the plugin name (`bonsai`; for a plugin installed
-from a marketplace it is `bonsai@claude-bonsai`).
+The key under `pluginConfigs` is `bonsai@claude-bonsai` for a plugin installed from
+the marketplace (checked: `claude plugin install bonsai@claude-bonsai --config
+preserveRecent=4` writes exactly that key) and `bonsai` when you run it with
+`--plugin-dir`. The same `--config KEY=VALUE` flag works at install time.
 
 ## Options
 

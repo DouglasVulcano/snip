@@ -49,13 +49,16 @@ resultado: o último, recente   mantém   resultado: o último, recente
 
 ## Instalação
 
-```text
-/plugin install bonsai --marketplace DouglasVulcano/claude-bonsai
+```bash
+claude plugin marketplace add DouglasVulcano/claude-bonsai
+claude plugin install bonsai@claude-bonsai
 ```
 
-Responda `y` para adicionar o marketplace, escolha um escopo e pronto: o próximo
-`/compact` passa a ser uma poda. Sem chave de API, sem rede, sem chamadas extras ao
-modelo.
+Só isso: o próximo `/compact` passa a ser uma poda. Sem chave de API, sem rede, sem
+chamadas extras ao modelo. O instalador avisa que algumas opções estão "not yet set";
+isso só significa que você não as personalizou, os padrões valem. Dentro de uma
+sessão do Claude Code os mesmos dois passos são `/plugin marketplace add …` e
+`/plugin install …`.
 
 <details>
 <summary>Ou rode direto do código-fonte</summary>

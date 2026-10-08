@@ -48,12 +48,15 @@ tool result: latest, recent    keep     tool result: latest, recent
 
 ## Install
 
-```text
-/plugin install bonsai --marketplace DouglasVulcano/claude-bonsai
+```bash
+claude plugin marketplace add DouglasVulcano/claude-bonsai
+claude plugin install bonsai@claude-bonsai
 ```
 
-Answer `y` to add the marketplace, pick a scope, and you are done: the next
-`/compact` is a prune. No API key, no network, no extra model calls.
+That is all: the next `/compact` is a prune. No API key, no network, no extra model
+calls. The installer says some options are "not yet set"; that only means you have
+not customized them, the defaults apply. Inside a Claude Code session the same two
+steps are `/plugin marketplace add …` and `/plugin install …`.
 
 <details>
 <summary>Or run it from source</summary>
