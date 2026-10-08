@@ -1,6 +1,8 @@
 <div align="center">
 
-# ✂️ Snip
+<img src="docs/img/logo.svg" width="112" alt="Snip logo: a pair of white scissors on a blue rounded square">
+
+# Snip
 
 **Prune your Claude Code context. Don't summarize it.**
 
@@ -119,26 +121,51 @@ On 9 real sessions Snip removes **49%** of the conversation's characters (median
 
 ## Configuration
 
-Everything has a default. Options appear in `/config`, or in `settings.json`:
+Everything has a default, so you can skip this section. The installer reports the
+options as "not yet set"; that only means you have not customized them.
 
-```json
-{ "pluginConfigs": { "snip": { "options": { "preserveRecent": 4, "keepMaxChars": 1000 } } } }
+To change one, open `/plugin`, go to **Installed**, pick `snip` and edit its options
+(the screen below), or set them from the command line:
+
+```bash
+claude plugin install snip@snip --config preserveRecent=4 --config keepMaxChars=1000
 ```
 
-| Option | Default | |
-|---|---|---|
-| `preserveRecent` | `8` | messages at the end that are never touched |
-| `keepMaxChars` | `2000` | old results longer than this are cut |
-| `headChars` / `tailChars` | `600` / `300` | what survives a cut |
-| `minSavingsPercent` | `15` | below this, fall back to the built-in summary |
-| `pruneInputs` | `true` | also cut long fields of old tool calls |
-| `keepTools` | `Agent,Task,…` | tools whose output is never pruned |
-| `triggerPercent` | `35` | prune on its own above this share of the window (interactive only) |
-| `relink` | `true` | keep the prune after `--continue` / `--resume` |
+or in `settings.json`:
 
-All options, with tuning advice: [docs/configuration.md](docs/configuration.md).
-Lower `preserveRecent` and `keepMaxChars` for the *tight* profile in the charts:
-−72% of the conversation, at the price of forgetting more of the recent reads.
+```json
+{ "pluginConfigs": { "snip@snip": { "options": { "preserveRecent": 4, "keepMaxChars": 1000 } } } }
+```
+
+### What to type in each field
+
+The rows below follow the order of the configuration screen. The values shown are
+the defaults, a safe place to start.
+
+| Label on the screen | Option | Type this | Range | What it controls |
+|---|---|---|---|---|
+| Proactive prune above (%) | `triggerPercent` | `35` | 0–95 | Prune on its own once the context passes this share of the window. `0` turns it off. Interactive sessions only, and [untested](#limitations). |
+| Retry after growing (points %) | `retryGrowth` | `5` | 1–50 | If a prune found nothing, try again only after the context grew by this many points. |
+| Recent messages left untouched | `preserveRecent` | `8` | 0–200 | How many of the last messages are never touched. A tool call and its result count as two. |
+| Largest old tool result (characters) | `keepMaxChars` | `2000` | 200–100000 | An old result longer than this is cut. |
+| Start kept when cutting (characters) | `headChars` | `600` | 0–20000 | Characters kept from the start of a cut result. |
+| End kept when cutting (characters) | `tailChars` | `300` | 0–20000 | Characters kept from the end (errors and conclusions sit there). |
+| Minimum savings for a prune to count (%) | `minSavingsPercent` | `15` | 1–90 | If pruning saves less than this, the built-in summary runs instead. |
+| Also prune old tool-call inputs | `pruneInputs` | `true` | true / false | Also cut long fields of old calls, such as the content of a `Write`. |
+| Keep the prune when resuming a session | `relink` | `true` | true / false | Keep the prune after `--continue` / `--resume`. |
+| Tools whose results are never pruned | `keepTools` | `Agent,Task,AskUserQuestion,ExitPlanMode` | comma-separated names | Calls and results of these tools are never touched. |
+
+### Ready-made profiles
+
+| Profile | Set | What I measured |
+|---|---|---|
+| **Default** | nothing | Conversation from ~98k to 40k tokens (−59%). Every fact from recent reads recalled. |
+| **Gentler** | `preserveRecent` `16`, `keepMaxChars` `4000` | On the 9 real sessions it removes 39% of the characters instead of 49%. Recall was not run end to end for this profile. |
+| **Tighter** | `preserveRecent` `4`, `keepMaxChars` `1000`, `headChars` `400`, `tailChars` `200` | Conversation down to 28k (−72%). Recall of facts from recent file reads falls to 50% in a live session (94% after resuming), against 100%. |
+| **On demand only** | `triggerPercent` `0` | Snip acts only when you run `/compact` or Claude Code compacts by itself. |
+
+More tuning advice, and how to keep a tool's output whole:
+[docs/configuration.md](docs/configuration.md).
 
 ## Limitations
 

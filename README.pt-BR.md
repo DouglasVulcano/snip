@@ -1,6 +1,8 @@
 <div align="center">
 
-# ✂️ Snip
+<img src="docs/img/logo.svg" width="112" alt="Logo do Snip: uma tesoura branca sobre um quadrado azul arredondado">
+
+# Snip
 
 **Pode o contexto do Claude Code. Não o resuma.**
 
@@ -123,26 +125,53 @@ metade disso vem das entradas das chamadas de ferramenta, não só dos resultado
 
 ## Configuração
 
-Tudo tem um padrão. As opções aparecem no `/config`, ou no `settings.json`:
+Tudo tem um padrão, então você pode pular esta seção. O instalador avisa que as
+opções estão "not yet set"; isso só significa que você não as personalizou.
 
-```json
-{ "pluginConfigs": { "snip": { "options": { "preserveRecent": 4, "keepMaxChars": 1000 } } } }
+Para mudar uma, abra `/plugin`, vá em **Installed**, escolha `snip` e edite as opções
+(a tela de configuração), ou use a linha de comando:
+
+```bash
+claude plugin install snip@snip --config preserveRecent=4 --config keepMaxChars=1000
 ```
 
-| Opção | Padrão | |
-|---|---|---|
-| `preserveRecent` | `8` | mensagens do fim que nunca são tocadas |
-| `keepMaxChars` | `2000` | resultados antigos maiores que isso são cortados |
-| `headChars` / `tailChars` | `600` / `300` | o que sobra de um corte |
-| `minSavingsPercent` | `15` | abaixo disso, cai no resumo nativo |
-| `pruneInputs` | `true` | também corta campos longos de chamadas antigas |
-| `keepTools` | `Agent,Task,…` | ferramentas cuja saída nunca é podada |
-| `triggerPercent` | `35` | poda sozinho acima desta fatia da janela (só interativo) |
-| `relink` | `true` | mantém a poda após `--continue` / `--resume` |
+ou o `settings.json`:
 
-Todas as opções, com dicas de ajuste: [docs/configuration.md](docs/configuration.md).
-Baixe `preserveRecent` e `keepMaxChars` para o perfil *tight* dos gráficos: −72% da
-conversa, ao preço de esquecer mais das leituras recentes.
+```json
+{ "pluginConfigs": { "snip@snip": { "options": { "preserveRecent": 4, "keepMaxChars": 1000 } } } }
+```
+
+### O que digitar em cada campo
+
+As linhas seguem a ordem da tela de configuração. Os valores são os padrões, um bom
+ponto de partida.
+
+| Rótulo na tela | Opção | Digite | Faixa | O que controla |
+|---|---|---|---|---|
+| Proactive prune above (%) | `triggerPercent` | `35` | 0–95 | Poda sozinho quando o contexto passa desta fatia da janela. `0` desliga. Só em sessões interativas, e [sem teste](#limitações). |
+| Retry after growing (points %) | `retryGrowth` | `5` | 1–50 | Se uma poda não achou nada, só tenta de novo depois que o contexto crescer esta quantidade de pontos. |
+| Recent messages left untouched | `preserveRecent` | `8` | 0–200 | Quantas das últimas mensagens nunca são tocadas. Uma chamada de ferramenta e seu resultado contam como duas. |
+| Largest old tool result (characters) | `keepMaxChars` | `2000` | 200–100000 | Um resultado antigo maior que isso é cortado. |
+| Start kept when cutting (characters) | `headChars` | `600` | 0–20000 | Caracteres mantidos do início de um resultado cortado. |
+| End kept when cutting (characters) | `tailChars` | `300` | 0–20000 | Caracteres mantidos do fim (erros e conclusões ficam lá). |
+| Minimum savings for a prune to count (%) | `minSavingsPercent` | `15` | 1–90 | Se a poda economizar menos que isso, roda o resumo nativo. |
+| Also prune old tool-call inputs | `pruneInputs` | `true` | true / false | Corta também campos longos de chamadas antigas, como o conteúdo de um `Write`. |
+| Keep the prune when resuming a session | `relink` | `true` | true / false | Mantém a poda depois de `--continue` / `--resume`. |
+| Tools whose results are never pruned | `keepTools` | `Agent,Task,AskUserQuestion,ExitPlanMode` | nomes separados por vírgula | Chamadas e resultados dessas ferramentas nunca são tocados. |
+
+Os rótulos ficam em inglês porque a tela de configuração do Claude Code os exibe assim.
+
+### Perfis prontos
+
+| Perfil | Configure | O que medi |
+|---|---|---|
+| **Padrão** | nada | Conversa de ~98 mil para 40 mil tokens (−59%). Todos os fatos de leituras recentes foram lembrados. |
+| **Mais leve** | `preserveRecent` `16`, `keepMaxChars` `4000` | Nas 9 sessões reais remove 39% dos caracteres, em vez de 49%. A lembrança não foi medida de ponta a ponta para este perfil. |
+| **Mais agressivo** | `preserveRecent` `4`, `keepMaxChars` `1000`, `headChars` `400`, `tailChars` `200` | Conversa em 28 mil (−72%). A lembrança de fatos de leituras recentes cai para 50% numa sessão viva (94% após retomar), contra 100%. |
+| **Só sob demanda** | `triggerPercent` `0` | O Snip só age quando você roda `/compact` ou o Claude Code compacta sozinho. |
+
+Mais dicas de ajuste, e como manter inteira a saída de uma ferramenta:
+[docs/configuration.md](docs/configuration.md).
 
 ## Limitações
 
