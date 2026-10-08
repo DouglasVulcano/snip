@@ -20,12 +20,12 @@ import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.patches import FancyBboxPatch  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-ARMS = ["control", "builtin", "bonsai", "bonsai-tight"]
+ARMS = ["control", "builtin", "snip", "snip-tight"]
 ARM_LABEL = {
     "control": "No compaction",
     "builtin": "Built-in /compact (summary)",
-    "bonsai": "Bonsai (defaults)",
-    "bonsai-tight": "Bonsai (tight)",
+    "snip": "Snip (defaults)",
+    "snip-tight": "Snip (tight)",
 }
 CATEGORIES = [
     ("chat", "Decisions made\nin chat", ["port", "db"]),
@@ -38,11 +38,11 @@ CATEGORIES = [
 THEMES = {
     "light": {
         "surface": "#fcfcfb", "text": "#0b0b0b", "muted": "#52514e", "grid": "#e6e5e1",
-        "control": "#9a998f", "builtin": "#eb6834", "bonsai": "#2a78d6", "bonsai-tight": "#1baf7a",
+        "control": "#9a998f", "builtin": "#eb6834", "snip": "#2a78d6", "snip-tight": "#1baf7a",
     },
     "dark": {
         "surface": "#1a1a19", "text": "#ffffff", "muted": "#c3c2b7", "grid": "#33332f",
-        "control": "#8a897f", "builtin": "#d95926", "bonsai": "#3987e5", "bonsai-tight": "#199e70",
+        "control": "#8a897f", "builtin": "#d95926", "snip": "#3987e5", "snip-tight": "#199e70",
     },
 }
 
@@ -86,7 +86,7 @@ def summarize(e2e):
         cell["compactSeconds"] = mean([r["compact"]["ms"] / 1000 for r in rs if r.get("compact")])
         cell["compactCostUsd"] = mean([r["compact"]["costUsd"] for r in rs if r.get("compact")])
         cell["engineSummaryRate"] = mean([1.0 if r["engine"]["engineSummary"] else 0.0 for r in rs])
-        cell["bonsaiPrunedRate"] = mean([1.0 if r["engine"]["bonsaiPruned"] else 0.0 for r in rs])
+        cell["snipPrunedRate"] = mean([1.0 if r["engine"]["snipPruned"] else 0.0 for r in rs])
         out[f"{arm}/{mode}"] = cell
     return {"model": e2e.get("model"), "trials": e2e.get("trials"), "errors": errors, "cells": out}
 
@@ -114,8 +114,8 @@ def save(fig, name, theme):
     out = ROOT / "docs" / "img"
     out.mkdir(parents=True, exist_ok=True)
     fig.savefig(out / f"{name}-{theme}.svg", format="svg")
-    if os.environ.get("BONSAI_PREVIEW"):  # PNG previews for eyeballing; not committed
-        preview = Path(os.environ["BONSAI_PREVIEW"])
+    if os.environ.get("SNIP_PREVIEW"):  # PNG previews for eyeballing; not committed
+        preview = Path(os.environ["SNIP_PREVIEW"])
         preview.mkdir(parents=True, exist_ok=True)
         fig.savefig(preview / f"{name}-{theme}.png", dpi=100)
     plt.close(fig)
@@ -179,7 +179,7 @@ def chart_tokens(summary, theme):
 
 def chart_cost(summary, theme):
     t = style(theme)
-    arms = [a for a in ("builtin", "bonsai", "bonsai-tight") if f"{a}/live" in summary["cells"]]
+    arms = [a for a in ("builtin", "snip", "snip-tight") if f"{a}/live" in summary["cells"]]
     fig, axes = plt.subplots(1, 2, figsize=(11, 3.4))
     legend(fig, t, arms, y=0.995)
     for ax, key, title, fmt in (
@@ -207,8 +207,8 @@ def chart_replay(replay, theme):
     fig, axes = plt.subplots(1, 2, figsize=(11, 3.6), gridspec_kw={"width_ratios": [1, 1.1]})
 
     comp = s["composition"]
-    parts = [("Tool results", comp["toolResultsPct"], t["builtin"]), ("Tool calls\n(inputs)", comp["toolCallsPct"], t["bonsai-tight"]),
-             ("Assistant\ntext", comp["assistantTextPct"], t["control"]), ("Your\nmessages", comp["userTextPct"], t["bonsai"])]
+    parts = [("Tool results", comp["toolResultsPct"], t["builtin"]), ("Tool calls\n(inputs)", comp["toolCallsPct"], t["snip-tight"]),
+             ("Assistant\ntext", comp["assistantTextPct"], t["control"]), ("Your\nmessages", comp["userTextPct"], t["snip"])]
     ax = axes[0]
     left = 0
     small = 0
@@ -235,7 +235,7 @@ def chart_replay(replay, theme):
     for i, (key, label) in enumerate(presets):
         p = s["presets"][key]
         y = len(presets) - 1 - i
-        ax.barh(y, p["overallSavedPct"], color=t["bonsai"] if key != "resultsOnly" else t["control"], height=0.55, zorder=3)
+        ax.barh(y, p["overallSavedPct"], color=t["snip"] if key != "resultsOnly" else t["control"], height=0.55, zorder=3)
         ax.text(p["overallSavedPct"] + 1, y, f"{p['overallSavedPct']:.0f}%", va="center", color=t["text"], fontsize=10)
         ax.text(-1, y, label, va="center", ha="right", color=t["muted"], fontsize=9.5)
     ax.set_xlim(0, 100)
@@ -243,7 +243,7 @@ def chart_replay(replay, theme):
     ax.xaxis.grid(True, color=t["grid"], zorder=0)
     ax.set_axisbelow(True)
     ax.set_xlabel("Characters removed from the conversation (%)")
-    ax.set_title("What Bonsai removes", loc="left", fontsize=11, color=t["text"], pad=10)
+    ax.set_title("What Snip removes", loc="left", fontsize=11, color=t["text"], pad=10)
     ax.tick_params(length=0)
     fig.tight_layout()
     save(fig, "replay", theme)

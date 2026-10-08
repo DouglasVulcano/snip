@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌳 Bonsai
+# ✂️ Snip
 
 **Prune your Claude Code context. Don't summarize it.**
 
@@ -20,7 +20,7 @@ decisions and plans stay word for word. Instant, free, and no extra model call.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/img/recall-dark.svg">
-  <img alt="Bonsai keeps recent and edge facts exactly; the built-in summary keeps less than half of the specifics" src="docs/img/recall-light.svg">
+  <img alt="Snip keeps recent and edge facts exactly; the built-in summary keeps less than half of the specifics" src="docs/img/recall-light.svg">
 </picture>
 
 <sub>Share of facts recalled exactly after compaction, 64 real runs against Claude Code
@@ -34,7 +34,7 @@ seconds, costs tokens, and is lossy in ways you cannot predict. But look at what
 actually fills a long session: in real transcripts, **87% of the text is tool
 calls and their output**, and only 13% is you and the assistant talking.
 
-Bonsai removes the tool output you no longer need and leaves everything else alone.
+Snip removes the tool output you no longer need and leaves everything else alone.
 
 ```
 before                                  after
@@ -42,15 +42,15 @@ before                                  after
 you: "use port 8472"           keep     you: "use port 8472"
 assistant: plan: …             keep     assistant: plan: …
 tool result: 18,000 chars      cut      tool result: first 600 + last 300 chars
-tool result: same Read, again  drop     [Bonsai pruned this result: Read a.ts …]
+tool result: same Read, again  drop     [Snip pruned this result: Read a.ts …]
 tool result: latest, recent    keep     tool result: latest, recent
 ```
 
 ## Install
 
 ```bash
-claude plugin marketplace add DouglasVulcano/claude-bonsai
-claude plugin install bonsai@claude-bonsai
+claude plugin marketplace add DouglasVulcano/snip
+claude plugin install snip@snip
 ```
 
 That is all: the next `/compact` is a prune. No API key, no network, no extra model
@@ -62,14 +62,14 @@ steps are `/plugin marketplace add …` and `/plugin install …`.
 <summary>Or run it from source</summary>
 
 ```bash
-git clone https://github.com/DouglasVulcano/claude-bonsai
-claude --plugin-dir ./claude-bonsai
+git clone https://github.com/DouglasVulcano/snip
+claude --plugin-dir ./snip
 ```
 </details>
 
 ## What you get
 
-|  | Built-in `/compact` | **Bonsai** |
+|  | Built-in `/compact` | **Snip** |
 |---|---|---|
 | Time to compact | 14.2 s | **0.16 s** |
 | Cost of the compaction | $0.071 | **$0** |
@@ -81,7 +81,7 @@ claude --plugin-dir ./claude-bonsai
 | Facts from the *middle* of old, long results | 13% | 0% |
 | Deterministic | no | **yes** |
 
-Bonsai compacts less than a summary can, and it cannot keep the middle of an old
+Snip compacts less than a summary can, and it cannot keep the middle of an old
 tool result. It is the right trade when you would rather keep the text exact and
 re-read a file than trust a paraphrase. [The numbers, and where they come from](docs/benchmark.md).
 
@@ -92,7 +92,7 @@ re-read a file than trust a paraphrase. [The numbers, and where they come from](
 
 ## How it works
 
-Bonsai hooks `session.compact`, which every compaction goes through (your
+Snip hooks `session.compact`, which every compaction goes through (your
 `/compact`, Claude Code's automatic one and a plugin's), and walks the conversation
 once:
 
@@ -109,12 +109,12 @@ once:
 Claude Code's own summary runs instead, so you are never worse off. Details in
 [docs/how-it-works.md](docs/how-it-works.md).
 
-On 9 real sessions Bonsai removes **49%** of the conversation's characters (median
+On 9 real sessions Snip removes **49%** of the conversation's characters (median
 40%); tool-call inputs, not only results, are half of that.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/img/replay-dark.svg">
-  <img alt="What fills a real session and what Bonsai removes" src="docs/img/replay-light.svg">
+  <img alt="What fills a real session and what Snip removes" src="docs/img/replay-light.svg">
 </picture>
 
 ## Configuration
@@ -122,7 +122,7 @@ On 9 real sessions Bonsai removes **49%** of the conversation's characters (medi
 Everything has a default. Options appear in `/config`, or in `settings.json`:
 
 ```json
-{ "pluginConfigs": { "bonsai": { "options": { "preserveRecent": 4, "keepMaxChars": 1000 } } } }
+{ "pluginConfigs": { "snip": { "options": { "preserveRecent": 4, "keepMaxChars": 1000 } } } }
 ```
 
 | Option | Default | |

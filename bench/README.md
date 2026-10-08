@@ -31,8 +31,8 @@ Every trial builds the same seeded project and runs it through every arm:
 |---|---|
 | `control` | nothing, the conversation is left alone |
 | `builtin` | Claude Code's own `/compact` (model-written summary) |
-| `bonsai` | `/compact` with this plugin loaded, default options |
-| `bonsai-tight` | same, with `preserveRecent=4`, `keepMaxChars=1000`, `headChars=400`, `tailChars=200` |
+| `snip` | `/compact` with this plugin loaded, default options |
+| `snip-tight` | same, with `preserveRecent=4`, `keepMaxChars=1000`, `headChars=400`, `tailChars=200` |
 
 and two modes: `live` (the questions are asked in the same process) and `resume`
 (the process is closed and the questions are asked after `claude --continue`).

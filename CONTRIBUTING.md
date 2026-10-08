@@ -1,13 +1,13 @@
 # Contributing
 
-Thanks for taking a look. Bonsai is small on purpose, so contributions that keep
+Thanks for taking a look. Snip is small on purpose, so contributions that keep
 it simple and measurable are the most welcome.
 
 ## Setup
 
 ```bash
-git clone https://github.com/DouglasVulcano/claude-bonsai
-cd claude-bonsai
+git clone https://github.com/DouglasVulcano/snip
+cd snip
 claude --plugin-dir .          # run Claude Code with the plugin loaded from source
 ```
 
@@ -37,6 +37,6 @@ claude plugin validate .       # manifest, marketplace and hooks module
 
 ## Reporting a bug
 
-Include the Claude Code version (`claude --version`), your Bonsai options, and,
-if you can, the debug log (`claude --debug-file bonsai.log`). Do not paste
+Include the Claude Code version (`claude --version`), your Snip options, and,
+if you can, the debug log (`claude --debug-file snip.log`). Do not paste
 conversation content you would not want public.

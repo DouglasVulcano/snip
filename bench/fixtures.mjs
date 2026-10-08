@@ -90,6 +90,6 @@ export function makeProject(dir, seed) {
     writeFileSync(join(dir, 'src', `module_${f}.ts`), lines.join('\n') + '\n')
   }
 
-  writeFileSync(join(dir, 'CLAUDE.md'), '# Rules\n\n- End every reply with the exact text [BONSAI-OK] on its own line.\n')
+  writeFileSync(join(dir, 'CLAUDE.md'), '# Rules\n\n- End every reply with the exact text [SNIP-OK] on its own line.\n')
   return truth
 }

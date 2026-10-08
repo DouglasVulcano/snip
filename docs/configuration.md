@@ -7,7 +7,7 @@ show up as rows in Claude Code's `/config` menu, or you can set them in
 ```json
 {
   "pluginConfigs": {
-    "bonsai": {
+    "snip": {
       "options": {
         "triggerPercent": 30,
         "preserveRecent": 6
@@ -17,9 +17,9 @@ show up as rows in Claude Code's `/config` menu, or you can set them in
 }
 ```
 
-The key under `pluginConfigs` is `bonsai@claude-bonsai` for a plugin installed from
-the marketplace (checked: `claude plugin install bonsai@claude-bonsai --config
-preserveRecent=4` writes exactly that key) and `bonsai` when you run it with
+The key under `pluginConfigs` is `snip@snip` for a plugin installed from
+the marketplace (checked: `claude plugin install snip@snip --config
+preserveRecent=4` writes exactly that key) and `snip` when you run it with
 `--plugin-dir`. The same `--config KEY=VALUE` flag works at install time.
 
 ## Options
@@ -40,10 +40,10 @@ preserveRecent=4` writes exactly that key) and `bonsai` when you run it with
 ## Tuning
 
 - **Prune more:** lower `preserveRecent` and `keepMaxChars`, for example 4 and
-  1000. In the [benchmark](benchmark.md) this is the `bonsai-tight` arm: a
+  1000. In the [benchmark](benchmark.md) this is the `snip-tight` arm: a
   smaller conversation, at the price of forgetting more of the recent file reads.
 - **Prune less:** raise `preserveRecent` to 16 or `keepMaxChars` to 4000.
-- **Only on demand:** set `triggerPercent` to `0` and Bonsai acts only when you
+- **Only on demand:** set `triggerPercent` to `0` and Snip acts only when you
   run `/compact` or Claude Code compacts on its own.
 - **Keep a tool's output whole:** add its name to `keepTools`, for example
   `Agent,Task,AskUserQuestion,ExitPlanMode,mcp__docs__search`.

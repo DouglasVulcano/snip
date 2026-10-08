@@ -23,14 +23,14 @@ export const register: Register = (on, options) => {
     if (saved < minSavings) {
       // Proactive: give up. Everything else falls back to Claude Code's own summary.
       return e.trigger === 'plugin'
-        ? { skip: `bonsai: nothing worth pruning (${saved.toFixed(0)}%)` }
+        ? { skip: `snip: nothing worth pruning (${saved.toFixed(0)}%)` }
         : next(e)
     }
 
     if (e.trigger !== 'precompute') {
       const tokens = approxTokens(result.chars.before - result.chars.after)
       $.ui.toast(
-        `bonsai: pruned ~${tokens} tokens (estimate): ` +
+        `snip: pruned ~${tokens} tokens (estimate): ` +
           `${result.dropped} stale results dropped, ${result.truncated} truncated`,
         { timeoutMs: 6000 },
       )
@@ -61,7 +61,7 @@ export const register: Register = (on, options) => {
       if (done.skip !== undefined) lastFutileAt = percent
     } catch (err) {
       lastFutileAt = percent
-      $.ui.toast(`bonsai: proactive prune failed: ${err instanceof Error ? err.message : String(err)}`)
+      $.ui.toast(`snip: proactive prune failed: ${err instanceof Error ? err.message : String(err)}`)
     }
     return out
   })

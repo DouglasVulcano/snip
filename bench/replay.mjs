@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Replays real Claude Code transcripts through Bonsai's pruner and reports how
+// Replays real Claude Code transcripts through Snip's pruner and reports how
 // much of each conversation it would remove. Offline: no API calls, no model.
 //
 //   node bench/replay.mjs [--projects <dir>] [--min-messages 30] [--out bench/results/replay.json]

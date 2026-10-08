@@ -117,7 +117,7 @@ export function describeUse(use: ToolUse | undefined): string {
 export function truncateText(text: string, head: number, tail: number): string {
   if (text.length <= head + tail) return text
   const cut = text.length - head - tail
-  return `${text.slice(0, head)}\n[… ${cut} characters pruned by Bonsai …]\n${tail > 0 ? text.slice(-tail) : ''}`
+  return `${text.slice(0, head)}\n[… ${cut} characters pruned by Snip …]\n${tail > 0 ? text.slice(-tail) : ''}`
 }
 
 const messageChars = (m: SessionMessage): number =>
@@ -172,7 +172,7 @@ export function prune(messages: readonly SessionMessage[], cfg: PruneConfig): Pr
         const firstLine = r.isError ? ` — error: ${r.text.split('\n')[0]?.slice(0, 120)}` : ''
         return {
           ...r,
-          text: `[Bonsai pruned this result: ${describeUse(use)} (${r.text.length} chars); the same call was repeated later${firstLine}]`,
+          text: `[Snip pruned this result: ${describeUse(use)} (${r.text.length} chars); the same call was repeated later${firstLine}]`,
         }
       }
 

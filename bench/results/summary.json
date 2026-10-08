@@ -3,166 +3,6 @@
   "trials": 8,
   "errors": [],
   "cells": {
-    "bonsai/live": {
-      "runs": 8,
-      "recall": {
-        "chat": {
-          "mean": 1.0,
-          "lo": 1.0,
-          "hi": 1.0
-        },
-        "recent": {
-          "mean": 1.0,
-          "lo": 1.0,
-          "hi": 1.0
-        },
-        "old_edge": {
-          "mean": 1.0,
-          "lo": 1.0,
-          "hi": 1.0
-        },
-        "old_middle": {
-          "mean": 0.0,
-          "lo": 0.0,
-          "hi": 0.0
-        },
-        "all": {
-          "mean": 0.75,
-          "lo": 0.75,
-          "hi": 0.75
-        }
-      },
-      "claudeMdFollowed": 1.0,
-      "reReadRate": 0.0,
-      "messageTokensBefore": 98275.0,
-      "messageTokensAfter": 39912.5,
-      "totalTokensAfter": 60600.0,
-      "askInputTokens": 70426.875,
-      "compactSeconds": 0.158625,
-      "compactCostUsd": 0.0,
-      "engineSummaryRate": 0.0,
-      "bonsaiPrunedRate": 1.0
-    },
-    "bonsai/resume": {
-      "runs": 8,
-      "recall": {
-        "chat": {
-          "mean": 1.0,
-          "lo": 1.0,
-          "hi": 1.0
-        },
-        "recent": {
-          "mean": 0.9375,
-          "lo": 0.8125,
-          "hi": 1.0
-        },
-        "old_edge": {
-          "mean": 1.0,
-          "lo": 1.0,
-          "hi": 1.0
-        },
-        "old_middle": {
-          "mean": 0.0,
-          "lo": 0.0,
-          "hi": 0.0
-        },
-        "all": {
-          "mean": 0.734375,
-          "lo": 0.703125,
-          "hi": 0.75
-        }
-      },
-      "claudeMdFollowed": 1.0,
-      "reReadRate": 0.0,
-      "messageTokensBefore": 98200.0,
-      "messageTokensAfter": 43262.5,
-      "totalTokensAfter": 62437.5,
-      "askInputTokens": 75628.375,
-      "compactSeconds": 0.1435,
-      "compactCostUsd": 0.0,
-      "engineSummaryRate": 0.0,
-      "bonsaiPrunedRate": 1.0
-    },
-    "bonsai-tight/live": {
-      "runs": 8,
-      "recall": {
-        "chat": {
-          "mean": 1.0,
-          "lo": 1.0,
-          "hi": 1.0
-        },
-        "recent": {
-          "mean": 0.5,
-          "lo": 0.5,
-          "hi": 0.5
-        },
-        "old_edge": {
-          "mean": 1.0,
-          "lo": 1.0,
-          "hi": 1.0
-        },
-        "old_middle": {
-          "mean": 0.0,
-          "lo": 0.0,
-          "hi": 0.0
-        },
-        "all": {
-          "mean": 0.625,
-          "lo": 0.625,
-          "hi": 0.625
-        }
-      },
-      "claudeMdFollowed": 1.0,
-      "reReadRate": 0.0,
-      "messageTokensBefore": 99700.0,
-      "messageTokensAfter": 28162.5,
-      "totalTokensAfter": 48862.5,
-      "askInputTokens": 58608.25,
-      "compactSeconds": 0.15537499999999999,
-      "compactCostUsd": 0.0,
-      "engineSummaryRate": 0.0,
-      "bonsaiPrunedRate": 1.0
-    },
-    "bonsai-tight/resume": {
-      "runs": 8,
-      "recall": {
-        "chat": {
-          "mean": 1.0,
-          "lo": 1.0,
-          "hi": 1.0
-        },
-        "recent": {
-          "mean": 0.9375,
-          "lo": 0.8125,
-          "hi": 1.0
-        },
-        "old_edge": {
-          "mean": 1.0,
-          "lo": 1.0,
-          "hi": 1.0
-        },
-        "old_middle": {
-          "mean": 0.0,
-          "lo": 0.0,
-          "hi": 0.0
-        },
-        "all": {
-          "mean": 0.734375,
-          "lo": 0.703125,
-          "hi": 0.75
-        }
-      },
-      "claudeMdFollowed": 1.0,
-      "reReadRate": 0.0,
-      "messageTokensBefore": 98237.5,
-      "messageTokensAfter": 33187.5,
-      "totalTokensAfter": 52412.5,
-      "askInputTokens": 62329.375,
-      "compactSeconds": 0.155,
-      "compactCostUsd": 0.0,
-      "engineSummaryRate": 0.0,
-      "bonsaiPrunedRate": 1.0
-    },
     "builtin/live": {
       "runs": 8,
       "recall": {
@@ -201,7 +41,7 @@
       "compactSeconds": 14.2365,
       "compactCostUsd": 0.071135859375,
       "engineSummaryRate": 1.0,
-      "bonsaiPrunedRate": 0.0
+      "snipPrunedRate": 0.0
     },
     "builtin/resume": {
       "runs": 8,
@@ -241,7 +81,7 @@
       "compactSeconds": 14.2385,
       "compactCostUsd": 0.071024815625,
       "engineSummaryRate": 1.0,
-      "bonsaiPrunedRate": 0.0
+      "snipPrunedRate": 0.0
     },
     "control/live": {
       "runs": 8,
@@ -281,7 +121,7 @@
       "compactSeconds": null,
       "compactCostUsd": null,
       "engineSummaryRate": 0.0,
-      "bonsaiPrunedRate": 0.0
+      "snipPrunedRate": 0.0
     },
     "control/resume": {
       "runs": 8,
@@ -321,7 +161,167 @@
       "compactSeconds": null,
       "compactCostUsd": null,
       "engineSummaryRate": 0.0,
-      "bonsaiPrunedRate": 0.0
+      "snipPrunedRate": 0.0
+    },
+    "snip/live": {
+      "runs": 8,
+      "recall": {
+        "chat": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "recent": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "old_edge": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "old_middle": {
+          "mean": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "all": {
+          "mean": 0.75,
+          "lo": 0.75,
+          "hi": 0.75
+        }
+      },
+      "claudeMdFollowed": 1.0,
+      "reReadRate": 0.0,
+      "messageTokensBefore": 98275.0,
+      "messageTokensAfter": 39912.5,
+      "totalTokensAfter": 60600.0,
+      "askInputTokens": 70426.875,
+      "compactSeconds": 0.158625,
+      "compactCostUsd": 0.0,
+      "engineSummaryRate": 0.0,
+      "snipPrunedRate": 1.0
+    },
+    "snip/resume": {
+      "runs": 8,
+      "recall": {
+        "chat": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "recent": {
+          "mean": 0.9375,
+          "lo": 0.8125,
+          "hi": 1.0
+        },
+        "old_edge": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "old_middle": {
+          "mean": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "all": {
+          "mean": 0.734375,
+          "lo": 0.703125,
+          "hi": 0.75
+        }
+      },
+      "claudeMdFollowed": 1.0,
+      "reReadRate": 0.0,
+      "messageTokensBefore": 98200.0,
+      "messageTokensAfter": 43262.5,
+      "totalTokensAfter": 62437.5,
+      "askInputTokens": 75628.375,
+      "compactSeconds": 0.1435,
+      "compactCostUsd": 0.0,
+      "engineSummaryRate": 0.0,
+      "snipPrunedRate": 1.0
+    },
+    "snip-tight/live": {
+      "runs": 8,
+      "recall": {
+        "chat": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "recent": {
+          "mean": 0.5,
+          "lo": 0.5,
+          "hi": 0.5
+        },
+        "old_edge": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "old_middle": {
+          "mean": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "all": {
+          "mean": 0.625,
+          "lo": 0.625,
+          "hi": 0.625
+        }
+      },
+      "claudeMdFollowed": 1.0,
+      "reReadRate": 0.0,
+      "messageTokensBefore": 99700.0,
+      "messageTokensAfter": 28162.5,
+      "totalTokensAfter": 48862.5,
+      "askInputTokens": 58608.25,
+      "compactSeconds": 0.15537499999999999,
+      "compactCostUsd": 0.0,
+      "engineSummaryRate": 0.0,
+      "snipPrunedRate": 1.0
+    },
+    "snip-tight/resume": {
+      "runs": 8,
+      "recall": {
+        "chat": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "recent": {
+          "mean": 0.9375,
+          "lo": 0.8125,
+          "hi": 1.0
+        },
+        "old_edge": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "old_middle": {
+          "mean": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "all": {
+          "mean": 0.734375,
+          "lo": 0.703125,
+          "hi": 0.75
+        }
+      },
+      "claudeMdFollowed": 1.0,
+      "reReadRate": 0.0,
+      "messageTokensBefore": 98237.5,
+      "messageTokensAfter": 33187.5,
+      "totalTokensAfter": 52412.5,
+      "askInputTokens": 62329.375,
+      "compactSeconds": 0.155,
+      "compactCostUsd": 0.0,
+      "engineSummaryRate": 0.0,
+      "snipPrunedRate": 1.0
     }
   }
 }

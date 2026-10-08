@@ -4,8 +4,8 @@
   "generatedAt": "2026-10-08T05:08:41.655Z",
   "runs": [
     {
-      "id": "bonsai-live-1",
-      "arm": "bonsai",
+      "id": "snip-live-1",
+      "arm": "snip",
       "mode": "live",
       "trial": 1,
       "truth": {
@@ -42,7 +42,7 @@
         "usedTools": false,
         "inputTokens": 73695
       },
-      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": null, \"c\": 62781, \"d\": null, \"e\": 51383, \"f\": 49791}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": null, \"c\": 62781, \"d\": null, \"e\": 51383, \"f\": 49791}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -57,12 +57,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-live-1",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-live-1",
+      "arm": "snip-tight",
       "mode": "live",
       "trial": 1,
       "truth": {
@@ -99,7 +99,7 @@
         "usedTools": false,
         "inputTokens": 58286
       },
-      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": null, \"b\": null, \"c\": 62781, \"d\": null, \"e\": 51383, \"f\": 49791}\n```\n\nI didn't see the `NOTE(ops)` payout rounding window in `module_a.ts` or the `RECONCILIATION_BATCH_CODE` constant in `module_b.ts`, and I didn't see the nightly settlement cutoff code in `module_d.ts`, so those are null.\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": null, \"b\": null, \"c\": 62781, \"d\": null, \"e\": 51383, \"f\": 49791}\n```\n\nI didn't see the `NOTE(ops)` payout rounding window in `module_a.ts` or the `RECONCILIATION_BATCH_CODE` constant in `module_b.ts`, and I didn't see the nightly settlement cutoff code in `module_d.ts`, so those are null.\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -114,7 +114,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -156,7 +156,7 @@
         "usedTools": false,
         "inputTokens": 49603
       },
-      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": 49791}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": 49791}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -171,7 +171,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -208,7 +208,7 @@
         "usedTools": false,
         "inputTokens": 137915
       },
-      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": 37063, \"c\": 62781, \"d\": 86804, \"e\": 51383, \"f\": 49791}\n```\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": 37063, \"c\": 62781, \"d\": 86804, \"e\": 51383, \"f\": 49791}\n```\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -223,12 +223,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-resume-1",
-      "arm": "bonsai",
+      "id": "snip-resume-1",
+      "arm": "snip",
       "mode": "resume",
       "trial": 1,
       "truth": {
@@ -265,7 +265,7 @@
         "usedTools": false,
         "inputTokens": 78086
       },
-      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": null, \"c\": 62781, \"d\": null, \"e\": 51383, \"f\": 49791}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": null, \"c\": 62781, \"d\": null, \"e\": 51383, \"f\": 49791}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -280,12 +280,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-resume-1",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-resume-1",
+      "arm": "snip-tight",
       "mode": "resume",
       "trial": 1,
       "truth": {
@@ -322,7 +322,7 @@
         "usedTools": false,
         "inputTokens": 66527
       },
-      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": null, \"c\": 62781, \"d\": null, \"e\": 51383, \"f\": 49791}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": null, \"c\": 62781, \"d\": null, \"e\": 51383, \"f\": 49791}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -337,7 +337,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -379,7 +379,7 @@
         "usedTools": false,
         "inputTokens": 53393
       },
-      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -394,7 +394,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -431,7 +431,7 @@
         "usedTools": false,
         "inputTokens": 131900
       },
-      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": 37063, \"c\": 62781, \"d\": 86804, \"e\": 51383, \"f\": 49791}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": 37063, \"c\": 62781, \"d\": 86804, \"e\": 51383, \"f\": 49791}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -446,12 +446,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-live-2",
-      "arm": "bonsai",
+      "id": "snip-live-2",
+      "arm": "snip",
       "mode": "live",
       "trial": 2,
       "truth": {
@@ -488,7 +488,7 @@
         "usedTools": false,
         "inputTokens": 70018
       },
-      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": null, \"c\": 18655, \"d\": null, \"e\": 26995, \"f\": 63686}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": null, \"c\": 18655, \"d\": null, \"e\": 26995, \"f\": 63686}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -503,12 +503,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-live-2",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-live-2",
+      "arm": "snip-tight",
       "mode": "live",
       "trial": 2,
       "truth": {
@@ -545,7 +545,7 @@
         "usedTools": false,
         "inputTokens": 58401
       },
-      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": null, \"b\": null, \"c\": 18655, \"d\": null, \"e\": 26995, \"f\": 63686}\n```\n\nI don't have the values for a, b, and d in this context. Those files' results were pruned, and the visible lines don't include the requested comments or constants.\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": null, \"b\": null, \"c\": 18655, \"d\": null, \"e\": 26995, \"f\": 63686}\n```\n\nI don't have the values for a, b, and d in this context. Those files' results were pruned, and the visible lines don't include the requested comments or constants.\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -560,7 +560,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -602,7 +602,7 @@
         "usedTools": false,
         "inputTokens": 49736
       },
-      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": 26995, \"f\": null}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": 26995, \"f\": null}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -617,7 +617,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -654,7 +654,7 @@
         "usedTools": false,
         "inputTokens": 138569
       },
-      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": 14016, \"c\": 18655, \"d\": 88907, \"e\": 26995, \"f\": 63686}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": 14016, \"c\": 18655, \"d\": 88907, \"e\": 26995, \"f\": 63686}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -669,12 +669,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-resume-2",
-      "arm": "bonsai",
+      "id": "snip-resume-2",
+      "arm": "snip",
       "mode": "resume",
       "trial": 2,
       "truth": {
@@ -711,7 +711,7 @@
         "usedTools": false,
         "inputTokens": 75647
       },
-      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": null, \"c\": 18655, \"d\": null, \"e\": 26995, \"f\": 63686}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": null, \"c\": 18655, \"d\": null, \"e\": 26995, \"f\": 63686}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -726,12 +726,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-resume-2",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-resume-2",
+      "arm": "snip-tight",
       "mode": "resume",
       "trial": 2,
       "truth": {
@@ -768,7 +768,7 @@
         "usedTools": false,
         "inputTokens": 63242
       },
-      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": null, \"c\": 18655, \"d\": null, \"e\": 26995, \"f\": 63686}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": null, \"c\": 18655, \"d\": null, \"e\": 26995, \"f\": 63686}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -783,7 +783,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -825,7 +825,7 @@
         "usedTools": false,
         "inputTokens": 54035
       },
-      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -840,7 +840,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -877,7 +877,7 @@
         "usedTools": false,
         "inputTokens": 132404
       },
-      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": 14016, \"c\": 18655, \"d\": 88907, \"e\": 26995, \"f\": 63686}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": 14016, \"c\": 18655, \"d\": 88907, \"e\": 26995, \"f\": 63686}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -892,12 +892,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-live-3",
-      "arm": "bonsai",
+      "id": "snip-live-3",
+      "arm": "snip",
       "mode": "live",
       "trial": 3,
       "truth": {
@@ -934,7 +934,7 @@
         "usedTools": false,
         "inputTokens": 70543
       },
-      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": 12365}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": 12365}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -949,12 +949,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-live-3",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-live-3",
+      "arm": "snip-tight",
       "mode": "live",
       "trial": 3,
       "truth": {
@@ -991,7 +991,7 @@
         "usedTools": false,
         "inputTokens": 59054
       },
-      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": null, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": 12365}\n```\n\nI couldn't recover `a`, `b`, or `d` from the earlier reads, so they're null. The reads were pruned, and the visible parts of those files don't include those values.\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": null, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": 12365}\n```\n\nI couldn't recover `a`, `b`, or `d` from the earlier reads, so they're null. The reads were pruned, and the visible parts of those files don't include those values.\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1006,7 +1006,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -1048,7 +1048,7 @@
         "usedTools": false,
         "inputTokens": 50110
       },
-      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": null, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": null}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": null, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": null}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1063,7 +1063,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -1100,7 +1100,7 @@
         "usedTools": false,
         "inputTokens": 138882
       },
-      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": 38472, \"c\": 58226, \"d\": 84709, \"e\": 11748, \"f\": 12365}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": 38472, \"c\": 58226, \"d\": 84709, \"e\": 11748, \"f\": 12365}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1115,12 +1115,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-resume-3",
-      "arm": "bonsai",
+      "id": "snip-resume-3",
+      "arm": "snip",
       "mode": "resume",
       "trial": 3,
       "truth": {
@@ -1157,7 +1157,7 @@
         "usedTools": false,
         "inputTokens": 75428
       },
-      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": 12365}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": 12365}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1172,12 +1172,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-resume-3",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-resume-3",
+      "arm": "snip-tight",
       "mode": "resume",
       "trial": 3,
       "truth": {
@@ -1214,7 +1214,7 @@
         "usedTools": false,
         "inputTokens": 63849
       },
-      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": 12365}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": 12365}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1229,7 +1229,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -1271,7 +1271,7 @@
         "usedTools": false,
         "inputTokens": 54452
       },
-      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": null, \"b\": null, \"c\": 58226, \"d\": 84709, \"e\": 11748, \"f\": 12365}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": null, \"b\": null, \"c\": 58226, \"d\": 84709, \"e\": 11748, \"f\": 12365}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1286,7 +1286,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -1323,7 +1323,7 @@
         "usedTools": false,
         "inputTokens": 132617
       },
-      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": 38472, \"c\": 58226, \"d\": 84709, \"e\": 11748, \"f\": 12365}\n```\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": 38472, \"c\": 58226, \"d\": 84709, \"e\": 11748, \"f\": 12365}\n```\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1338,12 +1338,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-live-4",
-      "arm": "bonsai",
+      "id": "snip-live-4",
+      "arm": "snip",
       "mode": "live",
       "trial": 4,
       "truth": {
@@ -1380,7 +1380,7 @@
         "usedTools": false,
         "inputTokens": 70124
       },
-      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": 41583, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": 41583, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1395,12 +1395,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-live-4",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-live-4",
+      "arm": "snip-tight",
       "mode": "live",
       "trial": 4,
       "truth": {
@@ -1437,7 +1437,7 @@
         "usedTools": false,
         "inputTokens": 58739
       },
-      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": null, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": null, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1452,7 +1452,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -1494,7 +1494,7 @@
         "usedTools": false,
         "inputTokens": 50067
       },
-      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": null, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": null, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1509,7 +1509,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -1546,7 +1546,7 @@
         "usedTools": false,
         "inputTokens": 138108
       },
-      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": 41583, \"b\": 95089, \"c\": 33870, \"d\": 36510, \"e\": 21613, \"f\": 82658}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": 41583, \"b\": 95089, \"c\": 33870, \"d\": 36510, \"e\": 21613, \"f\": 82658}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1561,12 +1561,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-resume-4",
-      "arm": "bonsai",
+      "id": "snip-resume-4",
+      "arm": "snip",
       "mode": "resume",
       "trial": 4,
       "truth": {
@@ -1603,7 +1603,7 @@
         "usedTools": false,
         "inputTokens": 74608
       },
-      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": null, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\nI set `a`, `b`, and `d` to null because I did not see those values in the earlier reads. The `b` and `d` outputs were pruned, and `module_a.ts` has no payout rounding window comment.\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": null, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\nI set `a`, `b`, and `d` to null because I did not see those values in the earlier reads. The `b` and `d` outputs were pruned, and `module_a.ts` has no payout rounding window comment.\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1618,12 +1618,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-resume-4",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-resume-4",
+      "arm": "snip-tight",
       "mode": "resume",
       "trial": 4,
       "truth": {
@@ -1660,7 +1660,7 @@
         "usedTools": false,
         "inputTokens": 63066
       },
-      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": 41583, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": 41583, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1675,7 +1675,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -1717,7 +1717,7 @@
         "usedTools": false,
         "inputTokens": 54078
       },
-      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": 82658}\n```\n\nOnly `port`, `db`, and `f` are recorded in my notes. The NOTE(ops) values for a, c, and d and the constants for b and e were not captured before the earlier context was compacted, so they are null rather than guessed.\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": 82658}\n```\n\nOnly `port`, `db`, and `f` are recorded in my notes. The NOTE(ops) values for a, c, and d and the constants for b and e were not captured before the earlier context was compacted, so they are null rather than guessed.\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1732,7 +1732,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -1769,7 +1769,7 @@
         "usedTools": false,
         "inputTokens": 132113
       },
-      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": 41583, \"b\": 95089, \"c\": 33870, \"d\": 36510, \"e\": 21613, \"f\": 82658}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": 41583, \"b\": 95089, \"c\": 33870, \"d\": 36510, \"e\": 21613, \"f\": 82658}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1784,12 +1784,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-live-5",
-      "arm": "bonsai",
+      "id": "snip-live-5",
+      "arm": "snip",
       "mode": "live",
       "trial": 5,
       "truth": {
@@ -1826,7 +1826,7 @@
         "usedTools": false,
         "inputTokens": 69684
       },
-      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": null, \"c\": 75871, \"d\": null, \"e\": 47188, \"f\": 62420}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": null, \"c\": 75871, \"d\": null, \"e\": 47188, \"f\": 62420}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1841,12 +1841,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-live-5",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-live-5",
+      "arm": "snip-tight",
       "mode": "live",
       "trial": 5,
       "truth": {
@@ -1883,7 +1883,7 @@
         "usedTools": false,
         "inputTokens": 58568
       },
-      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": null, \"b\": null, \"c\": 75871, \"d\": null, \"e\": 47188, \"f\": 62420}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": null, \"b\": null, \"c\": 75871, \"d\": null, \"e\": 47188, \"f\": 62420}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1898,7 +1898,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -1940,7 +1940,7 @@
         "usedTools": false,
         "inputTokens": 50435
       },
-      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": null, \"b\": 37959, \"c\": 75871, \"d\": 68111, \"e\": 47188, \"f\": 62420}\n```\n\nFor `a`, my notes list only two `NOTE(ops)` comments in `src/module_a.ts`: the refund cursor policy (81074) and the quota ticket limit (40376). Neither is about payout rounding, so I've set it to null.\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": null, \"b\": 37959, \"c\": 75871, \"d\": 68111, \"e\": 47188, \"f\": 62420}\n```\n\nFor `a`, my notes list only two `NOTE(ops)` comments in `src/module_a.ts`: the refund cursor policy (81074) and the quota ticket limit (40376). Neither is about payout rounding, so I've set it to null.\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -1955,7 +1955,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -1992,7 +1992,7 @@
         "usedTools": false,
         "inputTokens": 137822
       },
-      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": 37959, \"c\": 75871, \"d\": 68111, \"e\": 47188, \"f\": 62420}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": 37959, \"c\": 75871, \"d\": 68111, \"e\": 47188, \"f\": 62420}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2007,12 +2007,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-resume-5",
-      "arm": "bonsai",
+      "id": "snip-resume-5",
+      "arm": "snip",
       "mode": "resume",
       "trial": 5,
       "truth": {
@@ -2049,7 +2049,7 @@
         "usedTools": false,
         "inputTokens": 73628
       },
-      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": null, \"c\": 75871, \"d\": null, \"e\": 47188, \"f\": 62420}\n```\n\nI couldn't recover `b` or `d` from the earlier reads: those outputs were pruned before the relevant lines, so I've left them null rather than guess. The other values come from lines I saw in this conversation.\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": null, \"c\": 75871, \"d\": null, \"e\": 47188, \"f\": 62420}\n```\n\nI couldn't recover `b` or `d` from the earlier reads: those outputs were pruned before the relevant lines, so I've left them null rather than guess. The other values come from lines I saw in this conversation.\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2064,12 +2064,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-resume-5",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-resume-5",
+      "arm": "snip-tight",
       "mode": "resume",
       "trial": 5,
       "truth": {
@@ -2106,7 +2106,7 @@
         "usedTools": false,
         "inputTokens": 63025
       },
-      "reply": "{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": null, \"c\": 75871, \"d\": null, \"e\": 47188, \"f\": 62420}\n\n[BONSAI-OK]",
+      "reply": "{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": null, \"c\": 75871, \"d\": null, \"e\": 47188, \"f\": 62420}\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2121,7 +2121,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -2163,7 +2163,7 @@
         "usedTools": false,
         "inputTokens": 54396
       },
-      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": 62420}\n```\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": 62420}\n```\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2178,7 +2178,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -2215,7 +2215,7 @@
         "usedTools": false,
         "inputTokens": 130938
       },
-      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": 37959, \"c\": 75871, \"d\": 68111, \"e\": 47188, \"f\": 62420}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": 37959, \"c\": 75871, \"d\": 68111, \"e\": 47188, \"f\": 62420}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2230,12 +2230,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-live-6",
-      "arm": "bonsai",
+      "id": "snip-live-6",
+      "arm": "snip",
       "mode": "live",
       "trial": 6,
       "truth": {
@@ -2272,7 +2272,7 @@
         "usedTools": false,
         "inputTokens": 69807
       },
-      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": null, \"c\": 94638, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": null, \"c\": 94638, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2287,12 +2287,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-live-6",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-live-6",
+      "arm": "snip-tight",
       "mode": "live",
       "trial": 6,
       "truth": {
@@ -2329,7 +2329,7 @@
         "usedTools": false,
         "inputTokens": 58831
       },
-      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": null, \"b\": null, \"c\": 94638, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": null, \"b\": null, \"c\": 94638, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2344,7 +2344,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -2386,7 +2386,7 @@
         "usedTools": false,
         "inputTokens": 50073
       },
-      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2401,7 +2401,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -2438,7 +2438,7 @@
         "usedTools": false,
         "inputTokens": 138029
       },
-      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": 50998, \"c\": 94638, \"d\": 38912, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": 50998, \"c\": 94638, \"d\": 38912, \"e\": 43110, \"f\": 14225}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2453,12 +2453,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-resume-6",
-      "arm": "bonsai",
+      "id": "snip-resume-6",
+      "arm": "snip",
       "mode": "resume",
       "trial": 6,
       "truth": {
@@ -2495,7 +2495,7 @@
         "usedTools": false,
         "inputTokens": 74119
       },
-      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": null, \"c\": 94638, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": null, \"c\": 94638, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2510,12 +2510,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-resume-6",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-resume-6",
+      "arm": "snip-tight",
       "mode": "resume",
       "trial": 6,
       "truth": {
@@ -2552,7 +2552,7 @@
         "usedTools": false,
         "inputTokens": 63710
       },
-      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": null, \"c\": 94638, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": null, \"c\": 94638, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2567,7 +2567,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -2609,7 +2609,7 @@
         "usedTools": false,
         "inputTokens": 53702
       },
-      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": null, \"b\": null, \"c\": 94638, \"d\": 38912, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": null, \"b\": null, \"c\": 94638, \"d\": 38912, \"e\": 43110, \"f\": 14225}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2624,7 +2624,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -2661,7 +2661,7 @@
         "usedTools": false,
         "inputTokens": 132056
       },
-      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": 50998, \"c\": 94638, \"d\": 38912, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": 50998, \"c\": 94638, \"d\": 38912, \"e\": 43110, \"f\": 14225}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2676,12 +2676,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-live-7",
-      "arm": "bonsai",
+      "id": "snip-live-7",
+      "arm": "snip",
       "mode": "live",
       "trial": 7,
       "truth": {
@@ -2718,7 +2718,7 @@
         "usedTools": false,
         "inputTokens": 69739
       },
-      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": 19613, \"b\": null, \"c\": 81966, \"d\": null, \"e\": 74322, \"f\": 30619}\n```\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": 19613, \"b\": null, \"c\": 81966, \"d\": null, \"e\": 74322, \"f\": 30619}\n```\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2733,12 +2733,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-live-7",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-live-7",
+      "arm": "snip-tight",
       "mode": "live",
       "trial": 7,
       "truth": {
@@ -2775,7 +2775,7 @@
         "usedTools": false,
         "inputTokens": 58509
       },
-      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": null, \"b\": null, \"c\": 81966, \"d\": null, \"e\": 74322, \"f\": 30619}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": null, \"b\": null, \"c\": 81966, \"d\": null, \"e\": 74322, \"f\": 30619}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2790,7 +2790,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -2832,7 +2832,7 @@
         "usedTools": false,
         "inputTokens": 50115
       },
-      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": 30619}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": 30619}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2847,7 +2847,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -2884,7 +2884,7 @@
         "usedTools": false,
         "inputTokens": 137959
       },
-      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": 19613, \"b\": 34010, \"c\": 81966, \"d\": 81168, \"e\": 74322, \"f\": 30619}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": 19613, \"b\": 34010, \"c\": 81966, \"d\": 81168, \"e\": 74322, \"f\": 30619}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2899,12 +2899,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-resume-7",
-      "arm": "bonsai",
+      "id": "snip-resume-7",
+      "arm": "snip",
       "mode": "resume",
       "trial": 7,
       "truth": {
@@ -2941,7 +2941,7 @@
         "usedTools": false,
         "inputTokens": 78473
       },
-      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": 19613, \"b\": null, \"c\": 81966, \"d\": null, \"e\": 74322, \"f\": 30619}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": 19613, \"b\": null, \"c\": 81966, \"d\": null, \"e\": 74322, \"f\": 30619}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -2956,12 +2956,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-resume-7",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-resume-7",
+      "arm": "snip-tight",
       "mode": "resume",
       "trial": 7,
       "truth": {
@@ -2998,7 +2998,7 @@
         "usedTools": false,
         "inputTokens": 52035
       },
-      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": null, \"b\": null, \"c\": 81966, \"d\": null, \"e\": 74322, \"f\": 30619}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": null, \"b\": null, \"c\": 81966, \"d\": null, \"e\": 74322, \"f\": 30619}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -3013,7 +3013,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -3055,7 +3055,7 @@
         "usedTools": false,
         "inputTokens": 53551
       },
-      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -3070,7 +3070,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -3107,7 +3107,7 @@
         "usedTools": false,
         "inputTokens": 131057
       },
-      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": 19613, \"b\": 34010, \"c\": 81966, \"d\": 81168, \"e\": 74322, \"f\": 30619}\n```\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": 19613, \"b\": 34010, \"c\": 81966, \"d\": 81168, \"e\": 74322, \"f\": 30619}\n```\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -3122,12 +3122,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-live-8",
-      "arm": "bonsai",
+      "id": "snip-live-8",
+      "arm": "snip",
       "mode": "live",
       "trial": 8,
       "truth": {
@@ -3164,7 +3164,7 @@
         "usedTools": false,
         "inputTokens": 69805
       },
-      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": null, \"c\": 60479, \"d\": null, \"e\": 91501, \"f\": 17262}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": null, \"c\": 60479, \"d\": null, \"e\": 91501, \"f\": 17262}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -3179,12 +3179,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-live-8",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-live-8",
+      "arm": "snip-tight",
       "mode": "live",
       "trial": 8,
       "truth": {
@@ -3221,7 +3221,7 @@
         "usedTools": false,
         "inputTokens": 58478
       },
-      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": null, \"b\": null, \"c\": 60479, \"d\": null, \"e\": 91501, \"f\": 17262}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": null, \"b\": null, \"c\": 60479, \"d\": null, \"e\": 91501, \"f\": 17262}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -3236,7 +3236,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -3278,7 +3278,7 @@
         "usedTools": false,
         "inputTokens": 49659
       },
-      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -3293,7 +3293,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -3330,7 +3330,7 @@
         "usedTools": false,
         "inputTokens": 138449
       },
-      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": 80549, \"c\": 60479, \"d\": 67090, \"e\": 91501, \"f\": 17262}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": 80549, \"c\": 60479, \"d\": 67090, \"e\": 91501, \"f\": 17262}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -3345,12 +3345,12 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
-      "id": "bonsai-resume-8",
-      "arm": "bonsai",
+      "id": "snip-resume-8",
+      "arm": "snip",
       "mode": "resume",
       "trial": 8,
       "truth": {
@@ -3387,7 +3387,7 @@
         "usedTools": false,
         "inputTokens": 75038
       },
-      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": null, \"c\": 60479, \"d\": null, \"e\": 91501, \"f\": 17262}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": null, \"c\": 60479, \"d\": null, \"e\": 91501, \"f\": 17262}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -3402,12 +3402,12 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
-      "id": "bonsai-tight-resume-8",
-      "arm": "bonsai-tight",
+      "id": "snip-tight-resume-8",
+      "arm": "snip-tight",
       "mode": "resume",
       "trial": 8,
       "truth": {
@@ -3444,7 +3444,7 @@
         "usedTools": false,
         "inputTokens": 63181
       },
-      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": null, \"c\": 60479, \"d\": null, \"e\": 91501, \"f\": 17262}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": null, \"c\": 60479, \"d\": null, \"e\": 91501, \"f\": 17262}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -3459,7 +3459,7 @@
       "engine": {
         "pluginLoaded": true,
         "engineSummary": false,
-        "bonsaiPruned": true
+        "snipPruned": true
       }
     },
     {
@@ -3501,7 +3501,7 @@
         "usedTools": false,
         "inputTokens": 52959
       },
-      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -3516,7 +3516,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": true,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     },
     {
@@ -3553,7 +3553,7 @@
         "usedTools": false,
         "inputTokens": 132296
       },
-      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": 80549, \"c\": 60479, \"d\": 67090, \"e\": 91501, \"f\": 17262}\n```\n\n[BONSAI-OK]",
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": 80549, \"c\": 60479, \"d\": 67090, \"e\": 91501, \"f\": 17262}\n```\n\n[SNIP-OK]",
       "correct": {
         "port": true,
         "db": true,
@@ -3568,7 +3568,7 @@
       "engine": {
         "pluginLoaded": false,
         "engineSummary": false,
-        "bonsaiPruned": false
+        "snipPruned": false
       }
     }
   ]

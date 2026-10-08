@@ -1,10 +1,10 @@
-# How Bonsai works
+# How Snip works
 
 Claude Code's `/compact` asks a model to **rewrite** your conversation as a
 summary. That is slow (seconds), costs tokens, and is lossy in ways you cannot
 predict: whatever the summarizer did not think was important is gone.
 
-Bonsai takes the opposite approach. It **removes** the parts of the conversation
+Snip takes the opposite approach. It **removes** the parts of the conversation
 that are cheap to lose and keeps everything else word for word. Nothing is
 rewritten, so nothing is paraphrased wrongly.
 
@@ -21,11 +21,11 @@ tool result: 18,000 chars      keep     tool result: 18,000 chars   (recent)
 
 ## Where it plugs in
 
-Bonsai is a Claude Code *function-hooks* plugin. It registers two hooks:
+Snip is a Claude Code *function-hooks* plugin. It registers two hooks:
 
 | Hook | What it does |
 |---|---|
-| `session.compact` | Runs for **every** compaction: your `/compact`, Claude Code's automatic one, a plugin's, and the engine's precompute. Bonsai prunes the messages it is handed and returns them. The built-in summarizer never runs. |
+| `session.compact` | Runs for **every** compaction: your `/compact`, Claude Code's automatic one, a plugin's, and the engine's precompute. Snip prunes the messages it is handed and returns them. The built-in summarizer never runs. |
 | `turn.complete` | After each answer, checks how full the window is. Above `triggerPercent` it asks for a compaction, which then goes through the hook above. |
 
 If a prune would save less than `minSavingsPercent`, the hook calls `next(e)` and
@@ -34,7 +34,7 @@ plugin. The proactive trigger simply gives up in that case.
 
 ## What gets pruned
 
-Bonsai walks the conversation once and decides, per tool result and per tool
+Snip walks the conversation once and decides, per tool result and per tool
 call, in this order:
 
 1. **Protected?** The last `preserveRecent` messages, and the results and calls
@@ -67,7 +67,7 @@ backwards from the last row, and a kept message still points into the
 and quietly resurrects the unpruned conversation.
 
 Messages that come back **without** a `handle` are rebuilt by the engine from
-`role`, `text` and tool blocks, and get correct links. So Bonsai rebuilds every
+`role`, `text` and tool blocks, and get correct links. So Snip rebuilds every
 message from the call behind the first pruned result onwards, and leaves the earlier
 ones alone. Measured: before `relink`, a resumed session was the size of the
 unpruned one (77.3k tokens against 76.9k for the control); with it, the prune
@@ -86,7 +86,7 @@ unexplained.
 
 ## Proactive pruning
 
-Claude Code only compacts when the window is nearly full. Bonsai can act earlier:
+Claude Code only compacts when the window is nearly full. Snip can act earlier:
 the `turn.complete` hook reads `$.session.usage()` and, above `triggerPercent`
 (default 35), calls `$.session.compact()`. If that finds nothing worth pruning it
 backs off until the context has grown by `retryGrowth` more points.
@@ -97,18 +97,18 @@ failure is caught and reported, and `/compact` keeps working.
 
 ## Token estimates
 
-The toast Bonsai shows (`pruned ~12k tokens (estimate)`) uses a rough
+The toast Snip shows (`pruned ~12k tokens (estimate)`) uses a rough
 characters ÷ 4 rule. It only counts the messages the hook sees, not the system
 prompt or attachments. Treat it as an order of magnitude; the benchmark uses the
 engine's own `/context` numbers instead.
 
 ## Known limits
 
-- **Not a summary.** Bonsai never compresses what it keeps. A very long session
+- **Not a summary.** Snip never compresses what it keeps. A very long session
   of short messages will not shrink much.
 - **Cut results are gone.** A fact that sat in the middle of an old, long tool
   result is no longer in the context. Claude can read the file or run the command
   again, but it will not remember the content.
 - **`relink` side effects**, described above.
 - **Function hooks are early access** in Claude Code and may change between
-  releases. Bonsai is tested on 2.1.293.
+  releases. Snip is tested on 2.1.293.

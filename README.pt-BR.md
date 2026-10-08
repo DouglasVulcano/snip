@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌳 Bonsai
+# ✂️ Snip
 
 **Pode o contexto do Claude Code. Não o resuma.**
 
@@ -20,7 +20,7 @@ grátis e sem chamada extra ao modelo.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/img/recall-dark.svg">
-  <img alt="O Bonsai mantém fatos recentes e das bordas com exatidão; o resumo nativo guarda menos da metade dos detalhes" src="docs/img/recall-light.svg">
+  <img alt="O Snip mantém fatos recentes e das bordas com exatidão; o resumo nativo guarda menos da metade dos detalhes" src="docs/img/recall-light.svg">
 </picture>
 
 <sub>Fatos lembrados com exatidão depois da compactação, 64 execuções reais contra o
@@ -34,7 +34,7 @@ segundos, gasta tokens e perde informação de formas imprevisíveis. Mas veja o
 realmente enche uma sessão longa: em transcritos reais, **87% do texto são chamadas
 de ferramenta e a saída delas**, e só 13% são você e o assistente conversando.
 
-O Bonsai remove a saída de ferramenta que você não precisa mais e deixa todo o resto
+O Snip remove a saída de ferramenta que você não precisa mais e deixa todo o resto
 como está.
 
 ```
@@ -43,15 +43,15 @@ antes                                   depois
 você: "use a porta 8472"       mantém   você: "use a porta 8472"
 assistente: plano: …           mantém   assistente: plano: …
 resultado: 18.000 caracteres   corta    resultado: primeiros 600 + últimos 300
-resultado: mesmo Read, de novo remove   [Bonsai pruned this result: Read a.ts …]
+resultado: mesmo Read, de novo remove   [Snip pruned this result: Read a.ts …]
 resultado: o último, recente   mantém   resultado: o último, recente
 ```
 
 ## Instalação
 
 ```bash
-claude plugin marketplace add DouglasVulcano/claude-bonsai
-claude plugin install bonsai@claude-bonsai
+claude plugin marketplace add DouglasVulcano/snip
+claude plugin install snip@snip
 ```
 
 Só isso: o próximo `/compact` passa a ser uma poda. Sem chave de API, sem rede, sem
@@ -64,14 +64,14 @@ sessão do Claude Code os mesmos dois passos são `/plugin marketplace add …` 
 <summary>Ou rode direto do código-fonte</summary>
 
 ```bash
-git clone https://github.com/DouglasVulcano/claude-bonsai
-claude --plugin-dir ./claude-bonsai
+git clone https://github.com/DouglasVulcano/snip
+claude --plugin-dir ./snip
 ```
 </details>
 
 ## O que você ganha
 
-|  | `/compact` nativo | **Bonsai** |
+|  | `/compact` nativo | **Snip** |
 |---|---|---|
 | Tempo para compactar | 14,2 s | **0,16 s** |
 | Custo da compactação | US$ 0,071 | **US$ 0** |
@@ -83,7 +83,7 @@ claude --plugin-dir ./claude-bonsai
 | Fatos do *meio* de resultados antigos e longos | 13% | 0% |
 | Determinístico | não | **sim** |
 
-O Bonsai compacta menos do que um resumo consegue e não guarda o meio de um resultado
+O Snip compacta menos do que um resumo consegue e não guarda o meio de um resultado
 antigo de ferramenta. É a escolha certa quando você prefere manter o texto exato e
 reler um arquivo a confiar numa paráfrase.
 [Os números e de onde vêm](docs/benchmark.md).
@@ -95,7 +95,7 @@ reler um arquivo a confiar numa paráfrase.
 
 ## Como funciona
 
-O Bonsai se pendura no `session.compact`, por onde passa toda compactação (o seu
+O Snip se pendura no `session.compact`, por onde passa toda compactação (o seu
 `/compact`, a automática do Claude Code e a de um plugin), e percorre a conversa uma
 vez:
 
@@ -113,12 +113,12 @@ Pares `tool_use` / `tool_result` nunca são separados. Se a poda economizar meno
 15%, o resumo do próprio Claude Code roda no lugar, então você nunca fica pior do que
 sem o plugin. Detalhes em [docs/how-it-works.md](docs/how-it-works.md).
 
-Em 9 sessões reais o Bonsai remove **49%** dos caracteres da conversa (mediana 40%);
+Em 9 sessões reais o Snip remove **49%** dos caracteres da conversa (mediana 40%);
 metade disso vem das entradas das chamadas de ferramenta, não só dos resultados.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/img/replay-dark.svg">
-  <img alt="O que enche uma sessão real e o que o Bonsai remove" src="docs/img/replay-light.svg">
+  <img alt="O que enche uma sessão real e o que o Snip remove" src="docs/img/replay-light.svg">
 </picture>
 
 ## Configuração
@@ -126,7 +126,7 @@ metade disso vem das entradas das chamadas de ferramenta, não só dos resultado
 Tudo tem um padrão. As opções aparecem no `/config`, ou no `settings.json`:
 
 ```json
-{ "pluginConfigs": { "bonsai": { "options": { "preserveRecent": 4, "keepMaxChars": 1000 } } } }
+{ "pluginConfigs": { "snip": { "options": { "preserveRecent": 4, "keepMaxChars": 1000 } } } }
 ```
 
 | Opção | Padrão | |

@@ -1,10 +1,10 @@
 {
-  "name": "claude-bonsai",
-  "description": "Bonsai prunes your Claude Code context instead of summarizing it.",
+  "name": "snip",
+  "description": "Snip prunes your Claude Code context instead of summarizing it.",
   "owner": { "name": "Douglas Vulcano", "url": "https://github.com/DouglasVulcano" },
   "plugins": [
     {
-      "name": "bonsai",
+      "name": "snip",
       "source": "./",
       "description": "Prune your Claude Code context instead of summarizing it: stale and oversized tool results go, your conversation stays verbatim.",
       "category": "productivity",

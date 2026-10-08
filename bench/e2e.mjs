@@ -7,7 +7,7 @@
 //
 //   control  no compaction at all
 //   builtin  Claude Code's own /compact (model-written summary)
-//   bonsai   /compact with this plugin loaded
+//   snip   /compact with this plugin loaded
 //
 // Modes: `live` asks in the same process; `resume` closes the process and asks
 // after `claude --continue`.
@@ -31,18 +31,18 @@ const args = Object.fromEntries(
 const trials = Number(args.trials ?? 5)
 const concurrency = Number(args.concurrency ?? 3)
 const model = args.model ?? 'haiku'
-const arms = (args.arms ?? 'control,builtin,bonsai').split(',')
+const arms = (args.arms ?? 'control,builtin,snip').split(',')
 const modes = (args.modes ?? 'live,resume').split(',')
 const pluginDir = resolve(args.plugin ?? join(here, '..'))
-const workRoot = resolve(args.work ?? join(tmpdir(), 'bonsai-bench'))
+const workRoot = resolve(args.work ?? join(tmpdir(), 'snip-bench'))
 const outFile = args.out ?? join(here, 'results', 'e2e.json')
 const pluginOptions = args['plugin-options'] ? JSON.parse(args['plugin-options']) : undefined
 const TURN_TIMEOUT_MS = 240_000
 
-// `bonsai` runs with the plugin's defaults; `bonsai-tight` trades safety margin for savings.
+// `snip` runs with the plugin's defaults; `snip-tight` trades safety margin for savings.
 const ARM_OPTIONS = {
-  bonsai: {},
-  'bonsai-tight': { preserveRecent: 4, keepMaxChars: 1000, headChars: 400, tailChars: 200 },
+  snip: {},
+  'snip-tight': { preserveRecent: 4, keepMaxChars: 1000, headChars: 400, tailChars: 200 },
 }
 
 const log = (...a) => console.error(new Date().toISOString().slice(11, 19), ...a)
@@ -142,12 +142,12 @@ async function run({ arm, mode, trial }) {
   rmSync(dir, { recursive: true, force: true })
   mkdirSync(dir, { recursive: true })
   const truth = makeProject(dir, trial)
-  const plugin = arm.startsWith('bonsai')
+  const plugin = arm.startsWith('snip')
   let settingsFile
   const options = { ...ARM_OPTIONS[arm], ...pluginOptions }
   if (plugin && Object.keys(options).length) {
     settingsFile = join(dir, '.bench-settings.json')
-    writeFileSync(settingsFile, JSON.stringify({ pluginConfigs: { bonsai: { options } } }))
+    writeFileSync(settingsFile, JSON.stringify({ pluginConfigs: { snip: { options } } }))
   }
   const debug1 = join(dir, '.debug-1.log')
   const debug2 = join(dir, '.debug-2.log')
@@ -189,7 +189,7 @@ async function run({ arm, mode, trial }) {
     const answer = parseAnswer(reply)
     const keys = ['port', 'db', ...Object.keys(NEEDLES)]
     out.correct = Object.fromEntries(keys.map(k => [k, answer != null && norm(answer[k]) === norm(truth[k])]))
-    out.followsClaudeMd = reply.includes('[BONSAI-OK]')
+    out.followsClaudeMd = reply.includes('[SNIP-OK]')
   } catch (err) {
     out.error = String(err?.message ?? err)
   } finally {
@@ -206,9 +206,9 @@ const totalInput = u => (u ? (u.input_tokens ?? 0) + (u.cache_read_input_tokens 
 function engineFacts(files) {
   const text = files.filter(existsSync).map(f => readFileSync(f, 'utf8')).join('\n')
   return {
-    pluginLoaded: /hooks module bonsai@inline loaded/.test(text),
+    pluginLoaded: /hooks module snip@inline loaded/.test(text),
     engineSummary: /reactive-compact/.test(text),
-    bonsaiPruned: /bonsai: pruned/.test(text),
+    snipPruned: /snip: pruned/.test(text),
   }
 }
 

@@ -1,10 +1,10 @@
 {
-  "name": "bonsai",
+  "name": "snip",
   "version": "0.1.0",
   "description": "Prune your Claude Code context instead of summarizing it: stale and oversized tool results go, your conversation, decisions and plans stay verbatim.",
   "author": { "name": "Douglas Vulcano", "url": "https://github.com/DouglasVulcano" },
-  "homepage": "https://github.com/DouglasVulcano/claude-bonsai",
-  "repository": "https://github.com/DouglasVulcano/claude-bonsai",
+  "homepage": "https://github.com/DouglasVulcano/snip",
+  "repository": "https://github.com/DouglasVulcano/snip",
   "license": "MIT",
   "keywords": ["context", "compaction", "compact", "context-window", "tokens", "pruning"],
   "userConfig": {

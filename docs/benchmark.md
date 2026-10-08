@@ -6,7 +6,7 @@ Everything on this page was measured against the real Claude Code engine
 [`bench/results/e2e.json`](../bench/results/e2e.json), the aggregates in
 [`bench/results/summary.json`](../bench/results/summary.json).
 
-**Short version:** Bonsai is a different trade-off, not a free lunch. Compared
+**Short version:** Snip is a different trade-off, not a free lunch. Compared
 with the built-in `/compact` it compacts less (−59% of the conversation against
 −81%), but it takes 0.16 s instead of 14 s, costs nothing, keeps every recent fact
 and the whole conversation word for word, and in this benchmark remembered
@@ -20,7 +20,7 @@ Each run builds the same seeded project, walks a model through a realistic sessi
 then asks eight questions with tools off.
 
 - **8 trials × 4 arms × 2 modes = 64 runs**, no failed runs.
-- **Arms:** no compaction · built-in `/compact` · Bonsai with defaults · Bonsai
+- **Arms:** no compaction · built-in `/compact` · Snip with defaults · Snip
   tight (`preserveRecent=4`, `keepMaxChars=1000`).
 - **Modes:** `live` (same process) and `resume` (process closed, then
   `claude --continue`).
@@ -42,8 +42,8 @@ then asks eight questions with tools off.
 |---|---|---|---|---|---|
 | No compaction | 100% | 100% | 100% | 100% | 100% |
 | Built-in `/compact` | 48% (38–63) | 100% | 31% (13–44) | 50% (19–81) | 13% (0–38) |
-| **Bonsai** | **75%** (75–75) | 100% | **100%** | **100%** | 0% |
-| Bonsai tight | 63% (63–63) | 100% | 50% | 100% | 0% |
+| **Snip** | **75%** (75–75) | 100% | **100%** | **100%** | 0% |
+| Snip tight | 63% (63–63) | 100% | 50% | 100% | 0% |
 
 ### Recall, after `claude --continue`
 
@@ -51,21 +51,21 @@ then asks eight questions with tools off.
 |---|---|---|---|---|---|
 | No compaction | 100% | 100% | 100% | 100% | 100% |
 | Built-in `/compact` | 41% (28–56) | 100% | 25% (6–44) | 25% (0–63) | 13% (0–31) |
-| **Bonsai** | **73%** (70–75) | 100% | 94% (81–100) | 100% | 0% |
-| Bonsai tight | 73% (70–75) | 100% | 94% (81–100) | 100% | 0% |
+| **Snip** | **73%** (70–75) | 100% | 94% (81–100) | 100% | 0% |
+| Snip tight | 73% (70–75) | 100% | 94% (81–100) | 100% | 0% |
 
 Reading it:
 
 - **Conversation and decisions are safe everywhere.** What you said in chat was
   recalled in 100% of runs in every arm. A `CLAUDE.md` rule (end every reply with a
   marker) was followed in 100% of runs in every arm too.
-- **Bonsai keeps what is recent and what sits at the edges of old results**,
+- **Snip keeps what is recent and what sits at the edges of old results**,
   because it keeps their exact text. The summary kept less than a third of facts
   from recently read files: a summary says *that* a file was read, not what was
   in it.
-- **Bonsai loses the middle of old, long results, completely.** That is the price.
+- **Snip loses the middle of old, long results, completely.** That is the price.
   The summarizer kept one in eight there; its summary is lossy in a different place.
-- Bonsai's intervals are narrow because it is deterministic: the same transcript
+- Snip's intervals are narrow because it is deterministic: the same transcript
   always prunes the same way. The variation is only the model's answers.
 
 ## 2. What it costs
@@ -76,8 +76,8 @@ Reading it:
 |---|---|---|---|---|
 | No compaction | ~104k | 138k | n/a | n/a |
 | Built-in `/compact` | 19k (−81%) | 50k (−64%) | 14.2 s | $0.071 |
-| **Bonsai** | 40k (−59%) | 70k (−49%) | **0.16 s** | **$0** |
-| Bonsai tight | 28k (−72%) | 59k (−58%) | 0.16 s | $0 |
+| **Snip** | 40k (−59%) | 70k (−49%) | **0.16 s** | **$0** |
+| Snip tight | 28k (−72%) | 59k (−58%) | 0.16 s | $0 |
 
 "Whole request" includes the ~40k tokens of system prompt, tools and skills that no
 compaction touches. All token counts are the engine's own (`/context`), not
@@ -86,13 +86,13 @@ estimates.
 ![Time and cost of the compaction](img/cost-light.svg)
 
 The built-in summary is a model call over the whole conversation, so it takes
-seconds and is billed. Bonsai's prune is plain code in the hook: the 0.16 s above is
+seconds and is billed. Snip's prune is plain code in the hook: the 0.16 s above is
 the whole `/compact` round trip, and the pruning itself takes about a millisecond.
 
 ## 3. After `--continue`
 
 The prune survives resuming a session: after `claude --continue` the conversation is
-~43k tokens for Bonsai against ~106k with no compaction. That needed a fix
+~43k tokens for Snip against ~106k with no compaction. That needed a fix
 (`relink`, see [how it works](how-it-works.md#why-relink-exists)): without it,
 resuming silently restored the unpruned history (77.3k tokens against 76.9k for the
 control in an earlier test).
@@ -113,11 +113,11 @@ the exact mechanism. Treat resumed results as approximate.
 calls, and only aggregate numbers are kept. On 9 real sessions with at least 30
 messages (token estimate = characters ÷ 4):
 
-![What fills a real session, and what Bonsai removes](img/replay-light.svg)
+![What fills a real session, and what Snip removes](img/replay-light.svg)
 
 - A real conversation is **39% tool results and 48% tool calls**, only 13% is you
   and the assistant talking. Bash output is 60% of all tool-result text.
-- With defaults Bonsai removes **49%** of the characters overall (median session
+- With defaults Snip removes **49%** of the characters overall (median session
   40%, 90th percentile 55%). Pruning results alone would remove 23%: the other half
   comes from cutting long inputs of old tool calls such as the content of a `Write`.
 - The aggressive preset removes 57%, the gentle one 39%.
