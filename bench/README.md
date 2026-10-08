@@ -52,8 +52,9 @@ to fetch it again.
 Useful flags: `--arms`, `--modes`, `--model`, `--work <dir>`, `--plugin <path>`,
 `--plugin-options '{"preserveRecent":4}'`.
 
-> It uses real model calls (Haiku by default). A full run of 64 sessions cost
-> roughly a few US dollars of API-equivalent usage.
+> It uses real model calls (Haiku by default). The 64 published runs cost about
+> US$ 9.5 of API-equivalent usage, roughly US$ 0.15 per run: every session carries
+> ~100k tokens of file reads. Try `--trials 2` first.
 
 ## 3. Report
 
