@@ -1,18 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="t">
   <title id="t">Snip</title>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#3b8cf0"/>
-      <stop offset="1" stop-color="#2166bd"/>
-    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16254a"/><stop offset="1" stop-color="#080d19"/></linearGradient>
+    <linearGradient id="ink" gradientUnits="userSpaceOnUse" x1="60" y1="80" x2="190" y2="190"><stop offset="0" stop-color="#8cc2ff"/><stop offset="1" stop-color="#3b9bff"/></linearGradient>
+    <linearGradient id="cut" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient>
   </defs>
-  <rect width="256" height="256" rx="58" fill="url(#bg)"/>
-  <!-- the two blades cross at the pivot and run on into the handles -->
-  <g fill="none" stroke="#ffffff" stroke-linecap="round">
-    <path d="M214 88 L128 128 L66 157" stroke-width="15"/>
-    <path d="M214 168 L128 128 L66 99" stroke-width="15"/>
-    <circle cx="50" cy="164" r="22" stroke-width="11"/>
-    <circle cx="50" cy="92" r="22" stroke-width="11"/>
-  </g>
-  <circle cx="128" cy="128" r="9" fill="#2a78d6" stroke="#ffffff" stroke-width="5"/>
+  <!-- the context window, with its top-right corner snipped off -->
+  <path d="M60 0 H156 L256 100 V196 A60 60 0 0 1 196 256 H60 A60 60 0 0 1 0 196 V60 A60 60 0 0 1 60 0 Z" fill="url(#tile)"/>
+  <path d="M60.5 .5 H156 L255.5 100 V196 A59.5 59.5 0 0 1 196 255.5 H60 A59.5 59.5 0 0 1 .5 196 V60 A59.5 59.5 0 0 1 60 .5 Z" fill="none" stroke="#ffffff" stroke-opacity=".08"/>
+  <!-- the piece that was cut away, drifting off -->
+  <path d="M198 16 H240 V58 Z" fill="url(#cut)" stroke="url(#cut)" stroke-width="10" stroke-linejoin="round"/>
+  <!-- the prompt: what stays -->
+  <path d="M62 92 L118 138 L62 184" fill="none" stroke="url(#ink)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="136" y="164" width="62" height="24" rx="12" fill="url(#cut)"/>
 </svg>

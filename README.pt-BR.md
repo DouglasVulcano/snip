@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/img/logo.svg" width="112" alt="Logo do Snip: uma tesoura branca sobre um quadrado azul arredondado">
+<img src="docs/img/logo.svg" width="112" alt="Logo do Snip: um prompt de terminal num quadrado escuro com um canto cortado">
 
 # Snip
 
