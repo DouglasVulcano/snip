@@ -1,0 +1,86 @@
+{
+  "name": "bonsai",
+  "version": "0.1.0",
+  "description": "Prune your Claude Code context instead of summarizing it: stale and oversized tool results go, your conversation, decisions and plans stay verbatim.",
+  "author": { "name": "Douglas Vulcano", "url": "https://github.com/DouglasVulcano" },
+  "homepage": "https://github.com/DouglasVulcano/claude-bonsai",
+  "repository": "https://github.com/DouglasVulcano/claude-bonsai",
+  "license": "MIT",
+  "keywords": ["context", "compaction", "compact", "context-window", "tokens", "pruning"],
+  "userConfig": {
+    "triggerPercent": {
+      "type": "number",
+      "title": "Proactive prune above (%)",
+      "description": "Prune on its own once the context passes this percentage of the window. 0 turns it off and leaves only /compact and Claude Code's automatic compaction.",
+      "default": 35,
+      "min": 0,
+      "max": 95
+    },
+    "retryGrowth": {
+      "type": "number",
+      "title": "Retry after growing (points %)",
+      "description": "If a prune found nothing to remove, only try again after the context grew by this much.",
+      "default": 5,
+      "min": 1,
+      "max": 50
+    },
+    "preserveRecent": {
+      "type": "number",
+      "title": "Recent messages left untouched",
+      "description": "How many messages at the end of the conversation are never altered.",
+      "default": 8,
+      "min": 0,
+      "max": 200
+    },
+    "keepMaxChars": {
+      "type": "number",
+      "title": "Largest old tool result (characters)",
+      "description": "Old tool results longer than this are cut (their start and end stay).",
+      "default": 2000,
+      "min": 200,
+      "max": 100000
+    },
+    "headChars": {
+      "type": "number",
+      "title": "Start kept when cutting (characters)",
+      "description": "How much of the beginning of a cut result stays.",
+      "default": 600,
+      "min": 0,
+      "max": 20000
+    },
+    "tailChars": {
+      "type": "number",
+      "title": "End kept when cutting (characters)",
+      "description": "How much of the end of a cut result stays (errors and conclusions tend to be at the end).",
+      "default": 300,
+      "min": 0,
+      "max": 20000
+    },
+    "minSavingsPercent": {
+      "type": "number",
+      "title": "Minimum savings for a prune to count (%)",
+      "description": "If pruning saves less than this, /compact and automatic compaction fall back to Claude Code's own summary. The proactive prune simply gives up.",
+      "default": 15,
+      "min": 1,
+      "max": 90
+    },
+    "pruneInputs": {
+      "type": "boolean",
+      "title": "Also prune old tool-call inputs",
+      "description": "Cuts the long fields of old tool calls, such as the content of a Write or the strings of an Edit. The file on disk is the source of truth, so the old text is dead weight.",
+      "default": true
+    },
+    "relink": {
+      "type": "boolean",
+      "title": "Keep the prune when resuming a session",
+      "description": "Rebuilds the messages after the first pruned one so that --continue/--resume does not restore the original history. Turn off only to debug.",
+      "default": true
+    },
+    "keepTools": {
+      "type": "string",
+      "title": "Tools whose results are never pruned",
+      "description": "Comma-separated names. Default: subagent conclusions, user answers and plans.",
+      "default": "Agent,Task,AskUserQuestion,ExitPlanMode"
+    }
+  }
+}

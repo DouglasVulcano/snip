@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+*.pyc
+.bench-work/
+.claude-plugin/types/
+tsconfig.json
+bench/results/*.tmp
+.DS_Store
+Thumbs.db

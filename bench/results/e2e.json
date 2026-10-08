@@ -1,0 +1,3575 @@
+{
+  "model": "haiku",
+  "trials": 8,
+  "generatedAt": "2026-10-08T05:08:41.655Z",
+  "runs": [
+    {
+      "id": "bonsai-live-1",
+      "arm": "bonsai",
+      "mode": "live",
+      "trial": 1,
+      "truth": {
+        "port": "6832",
+        "db": "orders_payout80",
+        "a": "37281",
+        "b": "37063",
+        "c": "62781",
+        "d": "86804",
+        "e": "51383",
+        "f": "49791"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06422683
+      },
+      "before": {
+        "totalTokens": 118400,
+        "messageTokens": 97700
+      },
+      "compact": {
+        "ms": 168,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 63200,
+        "messageTokens": 42500
+      },
+      "ask": {
+        "ms": 3766,
+        "costUsd": 0.011494470000000007,
+        "usedTools": false,
+        "inputTokens": 73695
+      },
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": null, \"c\": 62781, \"d\": null, \"e\": 51383, \"f\": 49791}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-live-1",
+      "arm": "bonsai-tight",
+      "mode": "live",
+      "trial": 1,
+      "truth": {
+        "port": "6832",
+        "db": "orders_payout80",
+        "a": "37281",
+        "b": "37063",
+        "c": "62781",
+        "d": "86804",
+        "e": "51383",
+        "f": "49791"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06420157
+      },
+      "before": {
+        "totalTokens": 118500,
+        "messageTokens": 97900
+      },
+      "compact": {
+        "ms": 138,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 48500,
+        "messageTokens": 27800
+      },
+      "ask": {
+        "ms": 2916,
+        "costUsd": 0.008405099999999999,
+        "usedTools": false,
+        "inputTokens": 58286
+      },
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": null, \"b\": null, \"c\": 62781, \"d\": null, \"e\": 51383, \"f\": 49791}\n```\n\nI didn't see the `NOTE(ops)` payout rounding window in `module_a.ts` or the `RECONCILIATION_BATCH_CODE` constant in `module_b.ts`, and I didn't see the nightly settlement cutoff code in `module_d.ts`, so those are null.\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-live-1",
+      "arm": "builtin",
+      "mode": "live",
+      "trial": 1,
+      "truth": {
+        "port": "6832",
+        "db": "orders_payout80",
+        "a": "37281",
+        "b": "37063",
+        "c": "62781",
+        "d": "86804",
+        "e": "51383",
+        "f": "49791"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06428817
+      },
+      "before": {
+        "totalTokens": 118700,
+        "messageTokens": 98000
+      },
+      "compact": {
+        "ms": 11522,
+        "costUsd": 0.06958062500000001,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 38800,
+        "messageTokens": 18200
+      },
+      "ask": {
+        "ms": 2792,
+        "costUsd": 0.006647950000000014,
+        "usedTools": false,
+        "inputTokens": 49603
+      },
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": 49791}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": false,
+        "d": false,
+        "e": false,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-live-1",
+      "arm": "control",
+      "mode": "live",
+      "trial": 1,
+      "truth": {
+        "port": "6832",
+        "db": "orders_payout80",
+        "a": "37281",
+        "b": "37063",
+        "c": "62781",
+        "d": "86804",
+        "e": "51383",
+        "f": "49791"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06427044
+      },
+      "before": {
+        "totalTokens": 118700,
+        "messageTokens": 98000
+      },
+      "after": {
+        "totalTokens": 124900,
+        "messageTokens": 104200
+      },
+      "ask": {
+        "ms": 2261,
+        "costUsd": 0.02619275,
+        "usedTools": false,
+        "inputTokens": 137915
+      },
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": 37063, \"c\": 62781, \"d\": 86804, \"e\": 51383, \"f\": 49791}\n```\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-resume-1",
+      "arm": "bonsai",
+      "mode": "resume",
+      "trial": 1,
+      "truth": {
+        "port": "6832",
+        "db": "orders_payout80",
+        "a": "37281",
+        "b": "37063",
+        "c": "62781",
+        "d": "86804",
+        "e": "51383",
+        "f": "49791"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06322787
+      },
+      "before": {
+        "totalTokens": 117600,
+        "messageTokens": 96900
+      },
+      "compact": {
+        "ms": 144,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 65000,
+        "messageTokens": 45700
+      },
+      "ask": {
+        "ms": 5655,
+        "costUsd": 0.07574235000000001,
+        "usedTools": false,
+        "inputTokens": 78086
+      },
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": null, \"c\": 62781, \"d\": null, \"e\": 51383, \"f\": 49791}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-resume-1",
+      "arm": "bonsai-tight",
+      "mode": "resume",
+      "trial": 1,
+      "truth": {
+        "port": "6832",
+        "db": "orders_payout80",
+        "a": "37281",
+        "b": "37063",
+        "c": "62781",
+        "d": "86804",
+        "e": "51383",
+        "f": "49791"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06423567000000001
+      },
+      "before": {
+        "totalTokens": 118400,
+        "messageTokens": 97700
+      },
+      "compact": {
+        "ms": 138,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 56900,
+        "messageTokens": 37900
+      },
+      "ask": {
+        "ms": 5471,
+        "costUsd": 0.07453328000000001,
+        "usedTools": false,
+        "inputTokens": 66527
+      },
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": null, \"c\": 62781, \"d\": null, \"e\": 51383, \"f\": 49791}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-resume-1",
+      "arm": "builtin",
+      "mode": "resume",
+      "trial": 1,
+      "truth": {
+        "port": "6832",
+        "db": "orders_payout80",
+        "a": "37281",
+        "b": "37063",
+        "c": "62781",
+        "d": "86804",
+        "e": "51383",
+        "f": "49791"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06412614999999999
+      },
+      "before": {
+        "totalTokens": 118500,
+        "messageTokens": 97800
+      },
+      "compact": {
+        "ms": 12970,
+        "costUsd": 0.06977505,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 37200,
+        "messageTokens": 17900
+      },
+      "ask": {
+        "ms": 3015,
+        "costUsd": 0.14126196,
+        "usedTools": false,
+        "inputTokens": 53393
+      },
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": false,
+        "d": false,
+        "e": false,
+        "f": false
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-resume-1",
+      "arm": "control",
+      "mode": "resume",
+      "trial": 1,
+      "truth": {
+        "port": "6832",
+        "db": "orders_payout80",
+        "a": "37281",
+        "b": "37063",
+        "c": "62781",
+        "d": "86804",
+        "e": "51383",
+        "f": "49791"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06444294
+      },
+      "before": {
+        "totalTokens": 118900,
+        "messageTokens": 98200
+      },
+      "after": {
+        "totalTokens": 125000,
+        "messageTokens": 105700
+      },
+      "ask": {
+        "ms": 4052,
+        "costUsd": 0.18047064000000002,
+        "usedTools": false,
+        "inputTokens": 131900
+      },
+      "reply": "```json\n{\"port\": 6832, \"db\": \"orders_payout80\", \"a\": 37281, \"b\": 37063, \"c\": 62781, \"d\": 86804, \"e\": 51383, \"f\": 49791}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-live-2",
+      "arm": "bonsai",
+      "mode": "live",
+      "trial": 2,
+      "truth": {
+        "port": "5933",
+        "db": "orders_metric38",
+        "a": "97025",
+        "b": "14016",
+        "c": "18655",
+        "d": "88907",
+        "e": "26995",
+        "f": "63686"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06470837
+      },
+      "before": {
+        "totalTokens": 119200,
+        "messageTokens": 98500
+      },
+      "compact": {
+        "ms": 142,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 60300,
+        "messageTokens": 39600
+      },
+      "ask": {
+        "ms": 7055,
+        "costUsd": 0.011153570000000002,
+        "usedTools": false,
+        "inputTokens": 70018
+      },
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": null, \"c\": 18655, \"d\": null, \"e\": 26995, \"f\": 63686}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-live-2",
+      "arm": "bonsai-tight",
+      "mode": "live",
+      "trial": 2,
+      "truth": {
+        "port": "5933",
+        "db": "orders_metric38",
+        "a": "97025",
+        "b": "14016",
+        "c": "18655",
+        "d": "88907",
+        "e": "26995",
+        "f": "63686"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06473853
+      },
+      "before": {
+        "totalTokens": 119200,
+        "messageTokens": 98600
+      },
+      "compact": {
+        "ms": 141,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 48700,
+        "messageTokens": 28000
+      },
+      "ask": {
+        "ms": 3983,
+        "costUsd": 0.0085321,
+        "usedTools": false,
+        "inputTokens": 58401
+      },
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": null, \"b\": null, \"c\": 18655, \"d\": null, \"e\": 26995, \"f\": 63686}\n```\n\nI don't have the values for a, b, and d in this context. Those files' results were pruned, and the visible lines don't include the requested comments or constants.\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-live-2",
+      "arm": "builtin",
+      "mode": "live",
+      "trial": 2,
+      "truth": {
+        "port": "5933",
+        "db": "orders_metric38",
+        "a": "97025",
+        "b": "14016",
+        "c": "18655",
+        "d": "88907",
+        "e": "26995",
+        "f": "63686"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06476318
+      },
+      "before": {
+        "totalTokens": 119300,
+        "messageTokens": 98600
+      },
+      "compact": {
+        "ms": 11198,
+        "costUsd": 0.06948275000000001,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 38900,
+        "messageTokens": 18300
+      },
+      "ask": {
+        "ms": 2827,
+        "costUsd": 0.00666354999999999,
+        "usedTools": false,
+        "inputTokens": 49736
+      },
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": 26995, \"f\": null}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": false,
+        "d": false,
+        "e": true,
+        "f": false
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-live-2",
+      "arm": "control",
+      "mode": "live",
+      "trial": 2,
+      "truth": {
+        "port": "5933",
+        "db": "orders_metric38",
+        "a": "97025",
+        "b": "14016",
+        "c": "18655",
+        "d": "88907",
+        "e": "26995",
+        "f": "63686"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06484333
+      },
+      "before": {
+        "totalTokens": 119300,
+        "messageTokens": 98600
+      },
+      "after": {
+        "totalTokens": 125500,
+        "messageTokens": 104800
+      },
+      "ask": {
+        "ms": 2047,
+        "costUsd": 0.026164850000000003,
+        "usedTools": false,
+        "inputTokens": 138569
+      },
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": 14016, \"c\": 18655, \"d\": 88907, \"e\": 26995, \"f\": 63686}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-resume-2",
+      "arm": "bonsai",
+      "mode": "resume",
+      "trial": 2,
+      "truth": {
+        "port": "5933",
+        "db": "orders_metric38",
+        "a": "97025",
+        "b": "14016",
+        "c": "18655",
+        "d": "88907",
+        "e": "26995",
+        "f": "63686"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06482287
+      },
+      "before": {
+        "totalTokens": 119400,
+        "messageTokens": 98700
+      },
+      "compact": {
+        "ms": 145,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 61000,
+        "messageTokens": 41600
+      },
+      "ask": {
+        "ms": 4755,
+        "costUsd": 0.07691405000000001,
+        "usedTools": false,
+        "inputTokens": 75647
+      },
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": null, \"c\": 18655, \"d\": null, \"e\": 26995, \"f\": 63686}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-resume-2",
+      "arm": "bonsai-tight",
+      "mode": "resume",
+      "trial": 2,
+      "truth": {
+        "port": "5933",
+        "db": "orders_metric38",
+        "a": "97025",
+        "b": "14016",
+        "c": "18655",
+        "d": "88907",
+        "e": "26995",
+        "f": "63686"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06477546
+      },
+      "before": {
+        "totalTokens": 119300,
+        "messageTokens": 98600
+      },
+      "compact": {
+        "ms": 185,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 53100,
+        "messageTokens": 34200
+      },
+      "ask": {
+        "ms": 3914,
+        "costUsd": 0.07426457,
+        "usedTools": false,
+        "inputTokens": 63242
+      },
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": null, \"c\": 18655, \"d\": null, \"e\": 26995, \"f\": 63686}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-resume-2",
+      "arm": "builtin",
+      "mode": "resume",
+      "trial": 2,
+      "truth": {
+        "port": "5933",
+        "db": "orders_metric38",
+        "a": "97025",
+        "b": "14016",
+        "c": "18655",
+        "d": "88907",
+        "e": "26995",
+        "f": "63686"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06388901999999999
+      },
+      "before": {
+        "totalTokens": 118600,
+        "messageTokens": 97900
+      },
+      "compact": {
+        "ms": 15917,
+        "costUsd": 0.07205967500000002,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 37900,
+        "messageTokens": 18600
+      },
+      "ask": {
+        "ms": 3196,
+        "costUsd": 0.14347885500000002,
+        "usedTools": false,
+        "inputTokens": 54035
+      },
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": false,
+        "d": false,
+        "e": false,
+        "f": false
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-resume-2",
+      "arm": "control",
+      "mode": "resume",
+      "trial": 2,
+      "truth": {
+        "port": "5933",
+        "db": "orders_metric38",
+        "a": "97025",
+        "b": "14016",
+        "c": "18655",
+        "d": "88907",
+        "e": "26995",
+        "f": "63686"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06481734000000001
+      },
+      "before": {
+        "totalTokens": 119400,
+        "messageTokens": 98700
+      },
+      "after": {
+        "totalTokens": 125500,
+        "messageTokens": 106200
+      },
+      "ask": {
+        "ms": 2804,
+        "costUsd": 0.18083654000000002,
+        "usedTools": false,
+        "inputTokens": 132404
+      },
+      "reply": "```json\n{\"port\": 5933, \"db\": \"orders_metric38\", \"a\": 97025, \"b\": 14016, \"c\": 18655, \"d\": 88907, \"e\": 26995, \"f\": 63686}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-live-3",
+      "arm": "bonsai",
+      "mode": "live",
+      "trial": 3,
+      "truth": {
+        "port": "7864",
+        "db": "orders_window66",
+        "a": "92907",
+        "b": "38472",
+        "c": "58226",
+        "d": "84709",
+        "e": "11748",
+        "f": "12365"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06532906999999999
+      },
+      "before": {
+        "totalTokens": 119700,
+        "messageTokens": 99100
+      },
+      "compact": {
+        "ms": 175,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 60800,
+        "messageTokens": 40100
+      },
+      "ask": {
+        "ms": 3226,
+        "costUsd": 0.010861570000000001,
+        "usedTools": false,
+        "inputTokens": 70543
+      },
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": 12365}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-live-3",
+      "arm": "bonsai-tight",
+      "mode": "live",
+      "trial": 3,
+      "truth": {
+        "port": "7864",
+        "db": "orders_window66",
+        "a": "92907",
+        "b": "38472",
+        "c": "58226",
+        "d": "84709",
+        "e": "11748",
+        "f": "12365"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06548049000000002
+      },
+      "before": {
+        "totalTokens": 119900,
+        "messageTokens": 99200
+      },
+      "compact": {
+        "ms": 158,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 49300,
+        "messageTokens": 28600
+      },
+      "ask": {
+        "ms": 3759,
+        "costUsd": 0.0086262,
+        "usedTools": false,
+        "inputTokens": 59054
+      },
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": null, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": 12365}\n```\n\nI couldn't recover `a`, `b`, or `d` from the earlier reads, so they're null. The reads were pruned, and the visible parts of those files don't include those values.\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-live-3",
+      "arm": "builtin",
+      "mode": "live",
+      "trial": 3,
+      "truth": {
+        "port": "7864",
+        "db": "orders_window66",
+        "a": "92907",
+        "b": "38472",
+        "c": "58226",
+        "d": "84709",
+        "e": "11748",
+        "f": "12365"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06520907000000001
+      },
+      "before": {
+        "totalTokens": 119600,
+        "messageTokens": 98900
+      },
+      "compact": {
+        "ms": 14786,
+        "costUsd": 0.07111874999999998,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 39300,
+        "messageTokens": 18700
+      },
+      "ask": {
+        "ms": 4529,
+        "costUsd": 0.006837349999999992,
+        "usedTools": false,
+        "inputTokens": 50110
+      },
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": null, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": null}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": false
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-live-3",
+      "arm": "control",
+      "mode": "live",
+      "trial": 3,
+      "truth": {
+        "port": "7864",
+        "db": "orders_window66",
+        "a": "92907",
+        "b": "38472",
+        "c": "58226",
+        "d": "84709",
+        "e": "11748",
+        "f": "12365"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06523069000000001
+      },
+      "before": {
+        "totalTokens": 119600,
+        "messageTokens": 99000
+      },
+      "after": {
+        "totalTokens": 125800,
+        "messageTokens": 105100
+      },
+      "ask": {
+        "ms": 2932,
+        "costUsd": 0.026756100000000005,
+        "usedTools": false,
+        "inputTokens": 138882
+      },
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": 38472, \"c\": 58226, \"d\": 84709, \"e\": 11748, \"f\": 12365}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-resume-3",
+      "arm": "bonsai",
+      "mode": "resume",
+      "trial": 3,
+      "truth": {
+        "port": "7864",
+        "db": "orders_window66",
+        "a": "92907",
+        "b": "38472",
+        "c": "58226",
+        "d": "84709",
+        "e": "11748",
+        "f": "12365"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06616331
+      },
+      "before": {
+        "totalTokens": 119900,
+        "messageTokens": 99200
+      },
+      "compact": {
+        "ms": 139,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 62500,
+        "messageTokens": 43500
+      },
+      "ask": {
+        "ms": 2668,
+        "costUsd": 0.07795269,
+        "usedTools": false,
+        "inputTokens": 75428
+      },
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": 12365}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-resume-3",
+      "arm": "bonsai-tight",
+      "mode": "resume",
+      "trial": 3,
+      "truth": {
+        "port": "7864",
+        "db": "orders_window66",
+        "a": "92907",
+        "b": "38472",
+        "c": "58226",
+        "d": "84709",
+        "e": "11748",
+        "f": "12365"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06629452
+      },
+      "before": {
+        "totalTokens": 120000,
+        "messageTokens": 99300
+      },
+      "compact": {
+        "ms": 162,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 53800,
+        "messageTokens": 34800
+      },
+      "ask": {
+        "ms": 3995,
+        "costUsd": 0.07591002999999999,
+        "usedTools": false,
+        "inputTokens": 63849
+      },
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": null, \"c\": 58226, \"d\": null, \"e\": 11748, \"f\": 12365}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-resume-3",
+      "arm": "builtin",
+      "mode": "resume",
+      "trial": 3,
+      "truth": {
+        "port": "7864",
+        "db": "orders_window66",
+        "a": "92907",
+        "b": "38472",
+        "c": "58226",
+        "d": "84709",
+        "e": "11748",
+        "f": "12365"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06528189000000001
+      },
+      "before": {
+        "totalTokens": 119700,
+        "messageTokens": 99000
+      },
+      "compact": {
+        "ms": 16747,
+        "costUsd": 0.0729563,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 38300,
+        "messageTokens": 19000
+      },
+      "ask": {
+        "ms": 3299,
+        "costUsd": 0.14591825,
+        "usedTools": false,
+        "inputTokens": 54452
+      },
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": null, \"b\": null, \"c\": 58226, \"d\": 84709, \"e\": 11748, \"f\": 12365}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-resume-3",
+      "arm": "control",
+      "mode": "resume",
+      "trial": 3,
+      "truth": {
+        "port": "7864",
+        "db": "orders_window66",
+        "a": "92907",
+        "b": "38472",
+        "c": "58226",
+        "d": "84709",
+        "e": "11748",
+        "f": "12365"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06515005
+      },
+      "before": {
+        "totalTokens": 119600,
+        "messageTokens": 98900
+      },
+      "after": {
+        "totalTokens": 125700,
+        "messageTokens": 106400
+      },
+      "ask": {
+        "ms": 3401,
+        "costUsd": 0.18171225,
+        "usedTools": false,
+        "inputTokens": 132617
+      },
+      "reply": "```json\n{\"port\": 7864, \"db\": \"orders_window66\", \"a\": 92907, \"b\": 38472, \"c\": 58226, \"d\": 84709, \"e\": 11748, \"f\": 12365}\n```\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-live-4",
+      "arm": "bonsai",
+      "mode": "live",
+      "trial": 4,
+      "truth": {
+        "port": "4237",
+        "db": "orders_worker32",
+        "a": "41583",
+        "b": "95089",
+        "c": "33870",
+        "d": "36510",
+        "e": "21613",
+        "f": "82658"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06470197
+      },
+      "before": {
+        "totalTokens": 119000,
+        "messageTokens": 98300
+      },
+      "compact": {
+        "ms": 151,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 60400,
+        "messageTokens": 39700
+      },
+      "ask": {
+        "ms": 4582,
+        "costUsd": 0.010913770000000003,
+        "usedTools": false,
+        "inputTokens": 70124
+      },
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": 41583, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-live-4",
+      "arm": "bonsai-tight",
+      "mode": "live",
+      "trial": 4,
+      "truth": {
+        "port": "4237",
+        "db": "orders_worker32",
+        "a": "41583",
+        "b": "95089",
+        "c": "33870",
+        "d": "36510",
+        "e": "21613",
+        "f": "82658"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06479478
+      },
+      "before": {
+        "totalTokens": 119000,
+        "messageTokens": 98300
+      },
+      "compact": {
+        "ms": 147,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 49000,
+        "messageTokens": 28300
+      },
+      "ask": {
+        "ms": 3630,
+        "costUsd": 0.008571700000000002,
+        "usedTools": false,
+        "inputTokens": 58739
+      },
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": null, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-live-4",
+      "arm": "builtin",
+      "mode": "live",
+      "trial": 4,
+      "truth": {
+        "port": "4237",
+        "db": "orders_worker32",
+        "a": "41583",
+        "b": "95089",
+        "c": "33870",
+        "d": "36510",
+        "e": "21613",
+        "f": "82658"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06466297
+      },
+      "before": {
+        "totalTokens": 119000,
+        "messageTokens": 98300
+      },
+      "compact": {
+        "ms": 16837,
+        "costUsd": 0.07268325000000002,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 39300,
+        "messageTokens": 18600
+      },
+      "ask": {
+        "ms": 3242,
+        "costUsd": 0.006814750000000008,
+        "usedTools": false,
+        "inputTokens": 50067
+      },
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": null, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-live-4",
+      "arm": "control",
+      "mode": "live",
+      "trial": 4,
+      "truth": {
+        "port": "4237",
+        "db": "orders_worker32",
+        "a": "41583",
+        "b": "95089",
+        "c": "33870",
+        "d": "36510",
+        "e": "21613",
+        "f": "82658"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06455964
+      },
+      "before": {
+        "totalTokens": 118900,
+        "messageTokens": 98200
+      },
+      "after": {
+        "totalTokens": 125100,
+        "messageTokens": 104400
+      },
+      "ask": {
+        "ms": 4178,
+        "costUsd": 0.0271893,
+        "usedTools": false,
+        "inputTokens": 138108
+      },
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": 41583, \"b\": 95089, \"c\": 33870, \"d\": 36510, \"e\": 21613, \"f\": 82658}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-resume-4",
+      "arm": "bonsai",
+      "mode": "resume",
+      "trial": 4,
+      "truth": {
+        "port": "4237",
+        "db": "orders_worker32",
+        "a": "41583",
+        "b": "95089",
+        "c": "33870",
+        "d": "36510",
+        "e": "21613",
+        "f": "82658"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06478698
+      },
+      "before": {
+        "totalTokens": 119100,
+        "messageTokens": 98400
+      },
+      "compact": {
+        "ms": 141,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 61900,
+        "messageTokens": 42900
+      },
+      "ask": {
+        "ms": 4216,
+        "costUsd": 0.07656885999999999,
+        "usedTools": false,
+        "inputTokens": 74608
+      },
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": null, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\nI set `a`, `b`, and `d` to null because I did not see those values in the earlier reads. The `b` and `d` outputs were pruned, and `module_a.ts` has no payout rounding window comment.\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-resume-4",
+      "arm": "bonsai-tight",
+      "mode": "resume",
+      "trial": 4,
+      "truth": {
+        "port": "4237",
+        "db": "orders_worker32",
+        "a": "41583",
+        "b": "95089",
+        "c": "33870",
+        "d": "36510",
+        "e": "21613",
+        "f": "82658"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06464214000000001
+      },
+      "before": {
+        "totalTokens": 119100,
+        "messageTokens": 98400
+      },
+      "compact": {
+        "ms": 165,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 53000,
+        "messageTokens": 33600
+      },
+      "ask": {
+        "ms": 7646,
+        "costUsd": 0.07455355000000001,
+        "usedTools": false,
+        "inputTokens": 63066
+      },
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": 41583, \"b\": null, \"c\": 33870, \"d\": null, \"e\": 21613, \"f\": 82658}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-resume-4",
+      "arm": "builtin",
+      "mode": "resume",
+      "trial": 4,
+      "truth": {
+        "port": "4237",
+        "db": "orders_worker32",
+        "a": "41583",
+        "b": "95089",
+        "c": "33870",
+        "d": "36510",
+        "e": "21613",
+        "f": "82658"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06472571
+      },
+      "before": {
+        "totalTokens": 119000,
+        "messageTokens": 98300
+      },
+      "compact": {
+        "ms": 16581,
+        "costUsd": 0.07218142500000001,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 37900,
+        "messageTokens": 18600
+      },
+      "ask": {
+        "ms": 3232,
+        "costUsd": 0.144472395,
+        "usedTools": false,
+        "inputTokens": 54078
+      },
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": 82658}\n```\n\nOnly `port`, `db`, and `f` are recorded in my notes. The NOTE(ops) values for a, c, and d and the constants for b and e were not captured before the earlier context was compacted, so they are null rather than guessed.\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": false,
+        "d": false,
+        "e": false,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-resume-4",
+      "arm": "control",
+      "mode": "resume",
+      "trial": 4,
+      "truth": {
+        "port": "4237",
+        "db": "orders_worker32",
+        "a": "41583",
+        "b": "95089",
+        "c": "33870",
+        "d": "36510",
+        "e": "21613",
+        "f": "82658"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06474922
+      },
+      "before": {
+        "totalTokens": 119100,
+        "messageTokens": 98400
+      },
+      "after": {
+        "totalTokens": 125200,
+        "messageTokens": 105900
+      },
+      "ask": {
+        "ms": 2778,
+        "costUsd": 0.18046242,
+        "usedTools": false,
+        "inputTokens": 132113
+      },
+      "reply": "```json\n{\"port\": 4237, \"db\": \"orders_worker32\", \"a\": 41583, \"b\": 95089, \"c\": 33870, \"d\": 36510, \"e\": 21613, \"f\": 82658}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-live-5",
+      "arm": "bonsai",
+      "mode": "live",
+      "trial": 5,
+      "truth": {
+        "port": "5618",
+        "db": "orders_quota74",
+        "a": "73204",
+        "b": "37959",
+        "c": "75871",
+        "d": "68111",
+        "e": "47188",
+        "f": "62420"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06429718000000001
+      },
+      "before": {
+        "totalTokens": 118700,
+        "messageTokens": 98000
+      },
+      "compact": {
+        "ms": 208,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 60000,
+        "messageTokens": 39300
+      },
+      "ask": {
+        "ms": 2908,
+        "costUsd": 0.010667769999999993,
+        "usedTools": false,
+        "inputTokens": 69684
+      },
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": null, \"c\": 75871, \"d\": null, \"e\": 47188, \"f\": 62420}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-live-5",
+      "arm": "bonsai-tight",
+      "mode": "live",
+      "trial": 5,
+      "truth": {
+        "port": "5618",
+        "db": "orders_quota74",
+        "a": "73204",
+        "b": "37959",
+        "c": "75871",
+        "d": "68111",
+        "e": "47188",
+        "f": "62420"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06420027
+      },
+      "before": {
+        "totalTokens": 118600,
+        "messageTokens": 97900
+      },
+      "compact": {
+        "ms": 155,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 48800,
+        "messageTokens": 28100
+      },
+      "ask": {
+        "ms": 4289,
+        "costUsd": 0.008567500000000006,
+        "usedTools": false,
+        "inputTokens": 58568
+      },
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": null, \"b\": null, \"c\": 75871, \"d\": null, \"e\": 47188, \"f\": 62420}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-live-5",
+      "arm": "builtin",
+      "mode": "live",
+      "trial": 5,
+      "truth": {
+        "port": "5618",
+        "db": "orders_quota74",
+        "a": "73204",
+        "b": "37959",
+        "c": "75871",
+        "d": "68111",
+        "e": "47188",
+        "f": "62420"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06415937000000001
+      },
+      "before": {
+        "totalTokens": 118500,
+        "messageTokens": 97900
+      },
+      "compact": {
+        "ms": 17216,
+        "costUsd": 0.07268362500000002,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 39600,
+        "messageTokens": 19000
+      },
+      "ask": {
+        "ms": 3211,
+        "costUsd": 0.006859850000000001,
+        "usedTools": false,
+        "inputTokens": 50435
+      },
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": null, \"b\": 37959, \"c\": 75871, \"d\": 68111, \"e\": 47188, \"f\": 62420}\n```\n\nFor `a`, my notes list only two `NOTE(ops)` comments in `src/module_a.ts`: the refund cursor policy (81074) and the quota ticket limit (40376). Neither is about payout rounding, so I've set it to null.\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-live-5",
+      "arm": "control",
+      "mode": "live",
+      "trial": 5,
+      "truth": {
+        "port": "5618",
+        "db": "orders_quota74",
+        "a": "73204",
+        "b": "37959",
+        "c": "75871",
+        "d": "68111",
+        "e": "47188",
+        "f": "62420"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06417360999999999
+      },
+      "before": {
+        "totalTokens": 118600,
+        "messageTokens": 97900
+      },
+      "after": {
+        "totalTokens": 124800,
+        "messageTokens": 104100
+      },
+      "ask": {
+        "ms": 3004,
+        "costUsd": 0.026567499999999994,
+        "usedTools": false,
+        "inputTokens": 137822
+      },
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": 37959, \"c\": 75871, \"d\": 68111, \"e\": 47188, \"f\": 62420}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-resume-5",
+      "arm": "bonsai",
+      "mode": "resume",
+      "trial": 5,
+      "truth": {
+        "port": "5618",
+        "db": "orders_quota74",
+        "a": "73204",
+        "b": "37959",
+        "c": "75871",
+        "d": "68111",
+        "e": "47188",
+        "f": "62420"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06426353
+      },
+      "before": {
+        "totalTokens": 118600,
+        "messageTokens": 98000
+      },
+      "compact": {
+        "ms": 140,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 60900,
+        "messageTokens": 41900
+      },
+      "ask": {
+        "ms": 4240,
+        "costUsd": 0.07580641,
+        "usedTools": false,
+        "inputTokens": 73628
+      },
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": null, \"c\": 75871, \"d\": null, \"e\": 47188, \"f\": 62420}\n```\n\nI couldn't recover `b` or `d` from the earlier reads: those outputs were pruned before the relevant lines, so I've left them null rather than guess. The other values come from lines I saw in this conversation.\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-resume-5",
+      "arm": "bonsai-tight",
+      "mode": "resume",
+      "trial": 5,
+      "truth": {
+        "port": "5618",
+        "db": "orders_quota74",
+        "a": "73204",
+        "b": "37959",
+        "c": "75871",
+        "d": "68111",
+        "e": "47188",
+        "f": "62420"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06427289
+      },
+      "before": {
+        "totalTokens": 118700,
+        "messageTokens": 98000
+      },
+      "compact": {
+        "ms": 166,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 53000,
+        "messageTokens": 33600
+      },
+      "ask": {
+        "ms": 2512,
+        "costUsd": 0.0735681,
+        "usedTools": false,
+        "inputTokens": 63025
+      },
+      "reply": "{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": null, \"c\": 75871, \"d\": null, \"e\": 47188, \"f\": 62420}\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-resume-5",
+      "arm": "builtin",
+      "mode": "resume",
+      "trial": 5,
+      "truth": {
+        "port": "5618",
+        "db": "orders_quota74",
+        "a": "73204",
+        "b": "37959",
+        "c": "75871",
+        "d": "68111",
+        "e": "47188",
+        "f": "62420"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06413991000000002
+      },
+      "before": {
+        "totalTokens": 118500,
+        "messageTokens": 97800
+      },
+      "compact": {
+        "ms": 13723,
+        "costUsd": 0.070802425,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 38200,
+        "messageTokens": 18900
+      },
+      "ask": {
+        "ms": 3334,
+        "costUsd": 0.14257069500000003,
+        "usedTools": false,
+        "inputTokens": 54396
+      },
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": 62420}\n```\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": false,
+        "d": false,
+        "e": false,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-resume-5",
+      "arm": "control",
+      "mode": "resume",
+      "trial": 5,
+      "truth": {
+        "port": "5618",
+        "db": "orders_quota74",
+        "a": "73204",
+        "b": "37959",
+        "c": "75871",
+        "d": "68111",
+        "e": "47188",
+        "f": "62420"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06420676
+      },
+      "before": {
+        "totalTokens": 118600,
+        "messageTokens": 97900
+      },
+      "after": {
+        "totalTokens": 124800,
+        "messageTokens": 105800
+      },
+      "ask": {
+        "ms": 2636,
+        "costUsd": 0.17861496,
+        "usedTools": false,
+        "inputTokens": 130938
+      },
+      "reply": "```json\n{\"port\": 5618, \"db\": \"orders_quota74\", \"a\": 73204, \"b\": 37959, \"c\": 75871, \"d\": 68111, \"e\": 47188, \"f\": 62420}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-live-6",
+      "arm": "bonsai",
+      "mode": "live",
+      "trial": 6,
+      "truth": {
+        "port": "4276",
+        "db": "orders_window13",
+        "a": "21210",
+        "b": "50998",
+        "c": "94638",
+        "d": "38912",
+        "e": "43110",
+        "f": "14225"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06433217999999999
+      },
+      "before": {
+        "totalTokens": 118600,
+        "messageTokens": 97900
+      },
+      "compact": {
+        "ms": 138,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 60000,
+        "messageTokens": 39400
+      },
+      "ask": {
+        "ms": 4234,
+        "costUsd": 0.010724869999999997,
+        "usedTools": false,
+        "inputTokens": 69807
+      },
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": null, \"c\": 94638, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-live-6",
+      "arm": "bonsai-tight",
+      "mode": "live",
+      "trial": 6,
+      "truth": {
+        "port": "4276",
+        "db": "orders_window13",
+        "a": "21210",
+        "b": "50998",
+        "c": "94638",
+        "d": "38912",
+        "e": "43110",
+        "f": "14225"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.09630327999999999
+      },
+      "before": {
+        "totalTokens": 129800,
+        "messageTokens": 109100
+      },
+      "compact": {
+        "ms": 210,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 49100,
+        "messageTokens": 28400
+      },
+      "ask": {
+        "ms": 3383,
+        "costUsd": 0.008539599999999994,
+        "usedTools": false,
+        "inputTokens": 58831
+      },
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": null, \"b\": null, \"c\": 94638, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-live-6",
+      "arm": "builtin",
+      "mode": "live",
+      "trial": 6,
+      "truth": {
+        "port": "4276",
+        "db": "orders_window13",
+        "a": "21210",
+        "b": "50998",
+        "c": "94638",
+        "d": "38912",
+        "e": "43110",
+        "f": "14225"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06428143
+      },
+      "before": {
+        "totalTokens": 118600,
+        "messageTokens": 97900
+      },
+      "compact": {
+        "ms": 15051,
+        "costUsd": 0.071365875,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 39300,
+        "messageTokens": 18600
+      },
+      "ask": {
+        "ms": 3552,
+        "costUsd": 0.006805449999999991,
+        "usedTools": false,
+        "inputTokens": 50073
+      },
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": false,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-live-6",
+      "arm": "control",
+      "mode": "live",
+      "trial": 6,
+      "truth": {
+        "port": "4276",
+        "db": "orders_window13",
+        "a": "21210",
+        "b": "50998",
+        "c": "94638",
+        "d": "38912",
+        "e": "43110",
+        "f": "14225"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06431100000000001
+      },
+      "before": {
+        "totalTokens": 118800,
+        "messageTokens": 98100
+      },
+      "after": {
+        "totalTokens": 125000,
+        "messageTokens": 104300
+      },
+      "ask": {
+        "ms": 2444,
+        "costUsd": 0.026284050000000003,
+        "usedTools": false,
+        "inputTokens": 138029
+      },
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": 50998, \"c\": 94638, \"d\": 38912, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-resume-6",
+      "arm": "bonsai",
+      "mode": "resume",
+      "trial": 6,
+      "truth": {
+        "port": "4276",
+        "db": "orders_window13",
+        "a": "21210",
+        "b": "50998",
+        "c": "94638",
+        "d": "38912",
+        "e": "43110",
+        "f": "14225"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06440999
+      },
+      "before": {
+        "totalTokens": 118700,
+        "messageTokens": 98000
+      },
+      "compact": {
+        "ms": 145,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 61400,
+        "messageTokens": 42400
+      },
+      "ask": {
+        "ms": 2657,
+        "costUsd": 0.07593107,
+        "usedTools": false,
+        "inputTokens": 74119
+      },
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": null, \"c\": 94638, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-resume-6",
+      "arm": "bonsai-tight",
+      "mode": "resume",
+      "trial": 6,
+      "truth": {
+        "port": "4276",
+        "db": "orders_window13",
+        "a": "21210",
+        "b": "50998",
+        "c": "94638",
+        "d": "38912",
+        "e": "43110",
+        "f": "14225"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06435535
+      },
+      "before": {
+        "totalTokens": 118700,
+        "messageTokens": 98000
+      },
+      "compact": {
+        "ms": 137,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 53100,
+        "messageTokens": 33700
+      },
+      "ask": {
+        "ms": 4327,
+        "costUsd": 0.07394906000000001,
+        "usedTools": false,
+        "inputTokens": 63710
+      },
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": null, \"c\": 94638, \"d\": null, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-resume-6",
+      "arm": "builtin",
+      "mode": "resume",
+      "trial": 6,
+      "truth": {
+        "port": "4276",
+        "db": "orders_window13",
+        "a": "21210",
+        "b": "50998",
+        "c": "94638",
+        "d": "38912",
+        "e": "43110",
+        "f": "14225"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06426669
+      },
+      "before": {
+        "totalTokens": 118600,
+        "messageTokens": 97900
+      },
+      "compact": {
+        "ms": 13720,
+        "costUsd": 0.07061592499999998,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 37600,
+        "messageTokens": 18300
+      },
+      "ask": {
+        "ms": 3997,
+        "costUsd": 0.14244817499999998,
+        "usedTools": false,
+        "inputTokens": 53702
+      },
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": null, \"b\": null, \"c\": 94638, \"d\": 38912, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-resume-6",
+      "arm": "control",
+      "mode": "resume",
+      "trial": 6,
+      "truth": {
+        "port": "4276",
+        "db": "orders_window13",
+        "a": "21210",
+        "b": "50998",
+        "c": "94638",
+        "d": "38912",
+        "e": "43110",
+        "f": "14225"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06433164
+      },
+      "before": {
+        "totalTokens": 118700,
+        "messageTokens": 98000
+      },
+      "after": {
+        "totalTokens": 124800,
+        "messageTokens": 104100
+      },
+      "ask": {
+        "ms": 2688,
+        "costUsd": 0.17985784,
+        "usedTools": false,
+        "inputTokens": 132056
+      },
+      "reply": "```json\n{\"port\": 4276, \"db\": \"orders_window13\", \"a\": 21210, \"b\": 50998, \"c\": 94638, \"d\": 38912, \"e\": 43110, \"f\": 14225}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-live-7",
+      "arm": "bonsai",
+      "mode": "live",
+      "trial": 7,
+      "truth": {
+        "port": "4239",
+        "db": "orders_ledger66",
+        "a": "19613",
+        "b": "34010",
+        "c": "81966",
+        "d": "81168",
+        "e": "74322",
+        "f": "30619"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06448812
+      },
+      "before": {
+        "totalTokens": 118900,
+        "messageTokens": 98200
+      },
+      "compact": {
+        "ms": 145,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 60000,
+        "messageTokens": 39300
+      },
+      "ask": {
+        "ms": 2670,
+        "costUsd": 0.010676770000000002,
+        "usedTools": false,
+        "inputTokens": 69739
+      },
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": 19613, \"b\": null, \"c\": 81966, \"d\": null, \"e\": 74322, \"f\": 30619}\n```\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-live-7",
+      "arm": "bonsai-tight",
+      "mode": "live",
+      "trial": 7,
+      "truth": {
+        "port": "4239",
+        "db": "orders_ledger66",
+        "a": "19613",
+        "b": "34010",
+        "c": "81966",
+        "d": "81168",
+        "e": "74322",
+        "f": "30619"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06440156000000001
+      },
+      "before": {
+        "totalTokens": 118800,
+        "messageTokens": 98100
+      },
+      "compact": {
+        "ms": 143,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 48800,
+        "messageTokens": 28100
+      },
+      "ask": {
+        "ms": 3283,
+        "costUsd": 0.008482699999999996,
+        "usedTools": false,
+        "inputTokens": 58509
+      },
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": null, \"b\": null, \"c\": 81966, \"d\": null, \"e\": 74322, \"f\": 30619}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-live-7",
+      "arm": "builtin",
+      "mode": "live",
+      "trial": 7,
+      "truth": {
+        "port": "4239",
+        "db": "orders_ledger66",
+        "a": "19613",
+        "b": "34010",
+        "c": "81966",
+        "d": "81168",
+        "e": "74322",
+        "f": "30619"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06432573
+      },
+      "before": {
+        "totalTokens": 118700,
+        "messageTokens": 98000
+      },
+      "compact": {
+        "ms": 14552,
+        "costUsd": 0.07153812500000001,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 39300,
+        "messageTokens": 18700
+      },
+      "ask": {
+        "ms": 2027,
+        "costUsd": 0.006663849999999999,
+        "usedTools": false,
+        "inputTokens": 50115
+      },
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": 30619}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": false,
+        "d": false,
+        "e": false,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-live-7",
+      "arm": "control",
+      "mode": "live",
+      "trial": 7,
+      "truth": {
+        "port": "4239",
+        "db": "orders_ledger66",
+        "a": "19613",
+        "b": "34010",
+        "c": "81966",
+        "d": "81168",
+        "e": "74322",
+        "f": "30619"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06435718
+      },
+      "before": {
+        "totalTokens": 118700,
+        "messageTokens": 98000
+      },
+      "after": {
+        "totalTokens": 124900,
+        "messageTokens": 104200
+      },
+      "ask": {
+        "ms": 3435,
+        "costUsd": 0.02610245,
+        "usedTools": false,
+        "inputTokens": 137959
+      },
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": 19613, \"b\": 34010, \"c\": 81966, \"d\": 81168, \"e\": 74322, \"f\": 30619}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-resume-7",
+      "arm": "bonsai",
+      "mode": "resume",
+      "trial": 7,
+      "truth": {
+        "port": "4239",
+        "db": "orders_ledger66",
+        "a": "19613",
+        "b": "34010",
+        "c": "81966",
+        "d": "81168",
+        "e": "74322",
+        "f": "30619"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06440320000000001
+      },
+      "before": {
+        "totalTokens": 118600,
+        "messageTokens": 97900
+      },
+      "compact": {
+        "ms": 143,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 65400,
+        "messageTokens": 46000
+      },
+      "ask": {
+        "ms": 6911,
+        "costUsd": 0.07678708000000001,
+        "usedTools": false,
+        "inputTokens": 78473
+      },
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": 19613, \"b\": null, \"c\": 81966, \"d\": null, \"e\": 74322, \"f\": 30619}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-resume-7",
+      "arm": "bonsai-tight",
+      "mode": "resume",
+      "trial": 7,
+      "truth": {
+        "port": "4239",
+        "db": "orders_ledger66",
+        "a": "19613",
+        "b": "34010",
+        "c": "81966",
+        "d": "81168",
+        "e": "74322",
+        "f": "30619"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06341411000000001
+      },
+      "before": {
+        "totalTokens": 118000,
+        "messageTokens": 97300
+      },
+      "compact": {
+        "ms": 144,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 43300,
+        "messageTokens": 24000
+      },
+      "ask": {
+        "ms": 3331,
+        "costUsd": 0.07058032000000002,
+        "usedTools": false,
+        "inputTokens": 52035
+      },
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": null, \"b\": null, \"c\": 81966, \"d\": null, \"e\": 74322, \"f\": 30619}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-resume-7",
+      "arm": "builtin",
+      "mode": "resume",
+      "trial": 7,
+      "truth": {
+        "port": "4239",
+        "db": "orders_ledger66",
+        "a": "19613",
+        "b": "34010",
+        "c": "81966",
+        "d": "81168",
+        "e": "74322",
+        "f": "30619"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06434562999999999
+      },
+      "before": {
+        "totalTokens": 118700,
+        "messageTokens": 98000
+      },
+      "compact": {
+        "ms": 10968,
+        "costUsd": 0.06895817500000001,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 37400,
+        "messageTokens": 18100
+      },
+      "ask": {
+        "ms": 3777,
+        "costUsd": 0.140807165,
+        "usedTools": false,
+        "inputTokens": 53551
+      },
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": false,
+        "d": false,
+        "e": false,
+        "f": false
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-resume-7",
+      "arm": "control",
+      "mode": "resume",
+      "trial": 7,
+      "truth": {
+        "port": "4239",
+        "db": "orders_ledger66",
+        "a": "19613",
+        "b": "34010",
+        "c": "81966",
+        "d": "81168",
+        "e": "74322",
+        "f": "30619"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06437251
+      },
+      "before": {
+        "totalTokens": 118700,
+        "messageTokens": 98000
+      },
+      "after": {
+        "totalTokens": 124900,
+        "messageTokens": 106000
+      },
+      "ask": {
+        "ms": 3274,
+        "costUsd": 0.17895221,
+        "usedTools": false,
+        "inputTokens": 131057
+      },
+      "reply": "```json\n{\"port\": 4239, \"db\": \"orders_ledger66\", \"a\": 19613, \"b\": 34010, \"c\": 81966, \"d\": 81168, \"e\": 74322, \"f\": 30619}\n```\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-live-8",
+      "arm": "bonsai",
+      "mode": "live",
+      "trial": 8,
+      "truth": {
+        "port": "4929",
+        "db": "orders_invoice38",
+        "a": "79134",
+        "b": "80549",
+        "c": "60479",
+        "d": "67090",
+        "e": "91501",
+        "f": "17262"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06458753
+      },
+      "before": {
+        "totalTokens": 119200,
+        "messageTokens": 98500
+      },
+      "compact": {
+        "ms": 142,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 60100,
+        "messageTokens": 39400
+      },
+      "ask": {
+        "ms": 4583,
+        "costUsd": 0.010862469999999999,
+        "usedTools": false,
+        "inputTokens": 69805
+      },
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": null, \"c\": 60479, \"d\": null, \"e\": 91501, \"f\": 17262}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-live-8",
+      "arm": "bonsai-tight",
+      "mode": "live",
+      "trial": 8,
+      "truth": {
+        "port": "4929",
+        "db": "orders_invoice38",
+        "a": "79134",
+        "b": "80549",
+        "c": "60479",
+        "d": "67090",
+        "e": "91501",
+        "f": "17262"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06464636
+      },
+      "before": {
+        "totalTokens": 119200,
+        "messageTokens": 98500
+      },
+      "compact": {
+        "ms": 151,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 48700,
+        "messageTokens": 28000
+      },
+      "ask": {
+        "ms": 2770,
+        "costUsd": 0.008406999999999998,
+        "usedTools": false,
+        "inputTokens": 58478
+      },
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": null, \"b\": null, \"c\": 60479, \"d\": null, \"e\": 91501, \"f\": 17262}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-live-8",
+      "arm": "builtin",
+      "mode": "live",
+      "trial": 8,
+      "truth": {
+        "port": "4929",
+        "db": "orders_invoice38",
+        "a": "79134",
+        "b": "80549",
+        "c": "60479",
+        "d": "67090",
+        "e": "91501",
+        "f": "17262"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06467585000000001
+      },
+      "before": {
+        "totalTokens": 119300,
+        "messageTokens": 98600
+      },
+      "compact": {
+        "ms": 12730,
+        "costUsd": 0.07063387499999998,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 38800,
+        "messageTokens": 18200
+      },
+      "ask": {
+        "ms": 2892,
+        "costUsd": 0.00667065,
+        "usedTools": false,
+        "inputTokens": 49659
+      },
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": false,
+        "d": false,
+        "e": false,
+        "f": false
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-live-8",
+      "arm": "control",
+      "mode": "live",
+      "trial": 8,
+      "truth": {
+        "port": "4929",
+        "db": "orders_invoice38",
+        "a": "79134",
+        "b": "80549",
+        "c": "60479",
+        "d": "67090",
+        "e": "91501",
+        "f": "17262"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06459522
+      },
+      "before": {
+        "totalTokens": 119200,
+        "messageTokens": 98500
+      },
+      "after": {
+        "totalTokens": 125400,
+        "messageTokens": 104700
+      },
+      "ask": {
+        "ms": 2144,
+        "costUsd": 0.026191350000000002,
+        "usedTools": false,
+        "inputTokens": 138449
+      },
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": 80549, \"c\": 60479, \"d\": 67090, \"e\": 91501, \"f\": 17262}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "bonsai-resume-8",
+      "arm": "bonsai",
+      "mode": "resume",
+      "trial": 8,
+      "truth": {
+        "port": "4929",
+        "db": "orders_invoice38",
+        "a": "79134",
+        "b": "80549",
+        "c": "60479",
+        "d": "67090",
+        "e": "91501",
+        "f": "17262"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06460077
+      },
+      "before": {
+        "totalTokens": 119200,
+        "messageTokens": 98500
+      },
+      "compact": {
+        "ms": 151,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 61400,
+        "messageTokens": 42100
+      },
+      "ask": {
+        "ms": 2955,
+        "costUsd": 0.07632315,
+        "usedTools": false,
+        "inputTokens": 75038
+      },
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": null, \"c\": 60479, \"d\": null, \"e\": 91501, \"f\": 17262}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "bonsai-tight-resume-8",
+      "arm": "bonsai-tight",
+      "mode": "resume",
+      "trial": 8,
+      "truth": {
+        "port": "4929",
+        "db": "orders_invoice38",
+        "a": "79134",
+        "b": "80549",
+        "c": "60479",
+        "d": "67090",
+        "e": "91501",
+        "f": "17262"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06469726
+      },
+      "before": {
+        "totalTokens": 119300,
+        "messageTokens": 98600
+      },
+      "compact": {
+        "ms": 143,
+        "costUsd": 0,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 53100,
+        "messageTokens": 33700
+      },
+      "ask": {
+        "ms": 3491,
+        "costUsd": 0.07413017000000001,
+        "usedTools": false,
+        "inputTokens": 63181
+      },
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": null, \"c\": 60479, \"d\": null, \"e\": 91501, \"f\": 17262}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": false,
+        "c": true,
+        "d": false,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": true,
+        "engineSummary": false,
+        "bonsaiPruned": true
+      }
+    },
+    {
+      "id": "builtin-resume-8",
+      "arm": "builtin",
+      "mode": "resume",
+      "trial": 8,
+      "truth": {
+        "port": "4929",
+        "db": "orders_invoice38",
+        "a": "79134",
+        "b": "80549",
+        "c": "60479",
+        "d": "67090",
+        "e": "91501",
+        "f": "17262"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06468629000000001
+      },
+      "before": {
+        "totalTokens": 119300,
+        "messageTokens": 98600
+      },
+      "compact": {
+        "ms": 13282,
+        "costUsd": 0.07084955000000001,
+        "isError": false
+      },
+      "after": {
+        "totalTokens": 37100,
+        "messageTokens": 18200
+      },
+      "ask": {
+        "ms": 3580,
+        "costUsd": 0.1429283,
+        "usedTools": false,
+        "inputTokens": 52959
+      },
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": null, \"b\": null, \"c\": null, \"d\": null, \"e\": null, \"f\": null}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": false,
+        "b": false,
+        "c": false,
+        "d": false,
+        "e": false,
+        "f": false
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": true,
+        "bonsaiPruned": false
+      }
+    },
+    {
+      "id": "control-resume-8",
+      "arm": "control",
+      "mode": "resume",
+      "trial": 8,
+      "truth": {
+        "port": "4929",
+        "db": "orders_invoice38",
+        "a": "79134",
+        "b": "80549",
+        "c": "60479",
+        "d": "67090",
+        "e": "91501",
+        "f": "17262"
+      },
+      "error": null,
+      "setup": {
+        "turns": 9,
+        "costUsd": 0.06462701
+      },
+      "before": {
+        "totalTokens": 119200,
+        "messageTokens": 98600
+      },
+      "after": {
+        "totalTokens": 125400,
+        "messageTokens": 106100
+      },
+      "ask": {
+        "ms": 3680,
+        "costUsd": 0.18110321,
+        "usedTools": false,
+        "inputTokens": 132296
+      },
+      "reply": "```json\n{\"port\": 4929, \"db\": \"orders_invoice38\", \"a\": 79134, \"b\": 80549, \"c\": 60479, \"d\": 67090, \"e\": 91501, \"f\": 17262}\n```\n\n[BONSAI-OK]",
+      "correct": {
+        "port": true,
+        "db": true,
+        "a": true,
+        "b": true,
+        "c": true,
+        "d": true,
+        "e": true,
+        "f": true
+      },
+      "followsClaudeMd": true,
+      "engine": {
+        "pluginLoaded": false,
+        "engineSummary": false,
+        "bonsaiPruned": false
+      }
+    }
+  ]
+}
